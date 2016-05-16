@@ -1,23 +1,30 @@
 # 文献管理软件
 本Repo的目的是，收集当前的文献管理相关软件的一些用法，征集相关软件的安装配置使用技巧。
 
-##免费
-###文献管理-
+##引文分析
+####[Histcite]
+[Official Site]()
+
+##文献管理
+###传统
+####[Endnote(收费)]
+[Offical Site]()
+####[Noteexpress(收费)]
+[Offical Site]()
+###轻量
 ####[ReadCube]
 [Offical Site](https://www.readcube.com/)
-####[RefMe]
+#####[RefMe]
 [Offical Site](https://www.refme.com)
-###文献管理
+###常规
 ####[Zotero]
 [Offical Site](https://www.zotero.org/)
 ####[Mendeley]
 [Offical Site](https://www.mendeley.com/)
-###文献管理+
-[Docear]
+###外延
+###[Docear]
 [Offical Site](http://www.docear.org/)
-
-##收费
-####[Citavi]
+###[Citavi(收费)]
 [Offical Site](https://www.citavi.com/)
-####[DEVONthink]
+###[DEVONthink(收费)]
 [Offical Site](http://www.docear.org/)
