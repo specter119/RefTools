@@ -4,8 +4,8 @@
 　　这里的条目同步指的就是文献信息的同步，这个通过zotero本身就能很容易实现，以下给出一些建议设置。  
 
 1. 设置同步账户并取消内置文件同步  
-　　注[册zotero账户](https://www.zotero.org/user/register/)(温馨提示，有google图片验证，需要科学上网)，在`首选项→同步→设置`中填写账号密码。  
-　　zotero免费账户包含300mb同步空间，经测试，zoteo条目的存储并不记录在这300mb以内，但是仍显得太小，故应取消内置文件同步，在`首选项→同步→设置`中取消`文件同步`下面两个选项的勾选。
+　　注[册zotero账户](https://www.zotero.org/user/register/)(温馨提示，有google图片验证，需要科学上网)，在`首选项`→`同步`→`设置`中填写账号密码。  
+　　zotero免费账户包含300mb同步空间，经测试，zoteo条目的存储并不记录在这300mb以内，但是仍显得太小，故应取消内置文件同步，在`首选项`→`同步`→`设置`中取消`文件同步`下面两个选项的勾选。
 　　![同步设置](figs/cancel_sync_attachments.png)
 2. 取消自动生成快照  
 　　zotero默认设置为保存快照，网页快照包含了大量零碎的文件，估计同步起来也会有困难，对于一部分想保留的快照，依旧可以手动保存，所以建议取消自动生成快照。  
@@ -24,7 +24,7 @@
 　　![设置同步根目录](figs/sync_root_folder.png)
 
 2. 下载安装zofile  
-　　任意浏览器点开[官方4.2.6版链接](https://addons.cdn.mozilla.net/user-media/addons/284723/zotfile-4.2.6-fx.xpi)，下载后在zotero中打开`工具→插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-4.2.6-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
+　　任意浏览器点开[官方4.2.6版链接](https://addons.cdn.mozilla.net/user-media/addons/284723/zotfile-4.2.6-fx.xpi)，下载后在zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-4.2.6-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
 　　![安装插件](figs/install_plugin.png)
 
 3. 配置zotfie  
