@@ -1,5 +1,5 @@
-#HistCite
-##1. 安装
+# HistCite
+## 1. 安装
 ```sh
 brew cask install xquartz
 brew install wine --devel
@@ -17,7 +17,7 @@ ln -s ~/Documents/Dropbox/应用/HistCite ~/Documents/HistCite
 
 运行可执行文件，并导入`.hci`文件进行测试。
 
-##2. 封装为app
+## 2. 封装为app
 打开Automator，新建app，自脚本
 
 ```sh
