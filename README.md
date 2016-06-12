@@ -3,14 +3,14 @@
 
 ##引文分析
 ####[Histcite]
-[Official Site]()
+[Official Site](http://interest.science.thomsonreuters.com/forms/HistCite/)
 
 ##文献管理
 ###传统
 ####[Endnote(收费)]
-[Offical Site]()
+[Offical Site](http://endnote.com/)
 ####[Noteexpress(收费)]
-[Offical Site]()
+[Offical Site](http://www.inoteexpress.com/aegean/)
 ###轻量
 ####[ReadCube]
 [Offical Site](https://www.readcube.com/)
