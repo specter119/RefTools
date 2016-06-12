@@ -8,23 +8,23 @@
 ##文献管理
 ###传统
 ####[Endnote(收费)]
-[Offical Site](http://endnote.com/)
+[Official Site](http://endnote.com/)
 ####[Noteexpress(收费)]
-[Offical Site](http://www.inoteexpress.com/aegean/)
+[Official Site](http://www.inoteexpress.com/aegean/)
 ###轻量
 ####[ReadCube]
-[Offical Site](https://www.readcube.com/)
+[Official Site](https://www.readcube.com/)
 ####[RefMe]
-[Offical Site](https://www.refme.com)
+[Official Site](https://www.refme.com)
 ###常规
 ####[Zotero]
-[Offical Site](https://www.zotero.org/)
+[Official Site](https://www.zotero.org/)
 ####[Mendeley]
-[Offical Site](https://www.mendeley.com/)
+[Official Site](https://www.mendeley.com/)
 ###外延
 ###[Docear]
-[Offical Site](http://www.docear.org/)
+[Official Site](http://www.docear.org/)
 ###[Citavi(收费)]
-[Offical Site](https://www.citavi.com/)
+[Official Site](https://www.citavi.com/)
 ###[DEVONthink(收费)]
-[Offical Site](http://www.docear.org/)
+[Official Site](http://www.docear.org/)
