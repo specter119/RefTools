@@ -12,7 +12,7 @@
 ####[Noteexpress(收费)]
 [Official Site](http://www.inoteexpress.com/aegean/)
 ####[CNKI E-study]
-[Official Site](http://estudy.cnki.net)
+[Official Site](http://elearning.cnki.net)
 ###轻量
 ####[ReadCube]
 [Official Site](https://www.readcube.com/)
