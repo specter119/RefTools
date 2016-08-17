@@ -11,6 +11,8 @@
 [Official Site](http://endnote.com/)
 ####[Noteexpress(收费)]
 [Official Site](http://www.inoteexpress.com/aegean/)
+####[CNKI E-study]
+[Official Site](http://estudy.cnki.net)
 ###轻量
 ####[ReadCube]
 [Official Site](https://www.readcube.com/)
