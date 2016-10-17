@@ -9,8 +9,10 @@
 ###传统
 ####[Endnote(收费)]
 [Official Site](http://endnote.com/)
-####[Noteexpress(收费)]
+####[NoteExpress(收费， 高校图书馆多有购买集团办版 )]
 [Official Site](http://www.inoteexpress.com/aegean/)
+####[CNKI E-study]
+[Official Site](http://elearning.cnki.net)
 ###轻量
 ####[ReadCube]
 [Official Site](https://www.readcube.com/)
