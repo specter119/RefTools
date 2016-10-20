@@ -9,7 +9,7 @@
 ###传统
 ####[Endnote(收费)]
 [Official Site](http://endnote.com/)
-####[NoteExpress(收费， 高校图书馆多有购买集团版 )]
+####[NoteExpress(收费， 高校图书馆多有购买集团版 )](NoteExpress/noteexpress.md)
 [Official Site](http://www.inoteexpress.com/aegean/)
 ####[CNKI E-study]
 [Official Site](http://elearning.cnki.net)
@@ -19,12 +19,12 @@
 ####[RefMe]
 [Official Site](https://www.refme.com)
 ###常规
-####[Zotero]
+####[Zotero](zotero/zotero.md)
 [Official Site](https://www.zotero.org/)
 ####[Mendeley]
 [Official Site](https://www.mendeley.com/)
 ###外延
-####[Docear]
+####[Docear](docear/docear.md)
 [Official Site](http://www.docear.org/)
 ####[Citavi(收费)]
 [Official Site](https://www.citavi.com/)
