@@ -1,6 +1,8 @@
 #+title: Jabref
 * Introduction
-Jabref is a famous citation program.
+JabRef is a famous citation program, it's a graphical, easy to use, flexible application based on bib files.
+
 * Website
+You can view the details on the [[https://www.jabref.org/][Official Website]], if you just want to download the software and use it, please refer to [[https://sourceforge.net/projects/jabref/][Download link]] or you can find the source on [[https://github.com/JabRef/jabref][Github]], become a member of develop team.
 * Software
 * User manual
