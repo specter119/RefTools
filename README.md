@@ -23,6 +23,9 @@
 [Official Site](https://www.zotero.org/)
 ####[Mendeley]
 [Official Site](https://www.mendeley.com/)
+####[JabRef]
+[Official Site](http://www.jabref.org/)
+Please see [Details](./jabref/README.org "JabRef Readme")
 ###外延
 ####[Docear](docear/docear.md)
 [Official Site](http://www.docear.org/)
