@@ -1,0 +1,26 @@
+#+include: ../head.org 
+#+latex_class: elsarticle
+#+latex_class_options:[5p] 
+#+options: title:nil author:nil
+#+title: Title 
+#+Author: Xiaoyun Yu 
+#+BEGIN_abstract
+Abstract Content
+#+END_abstract
+#+BEGIN_keyword
+Keyword1, keyword2, \cdots
+#+END_keyword
+#+include: ../authors.org
+
+* Introduction
+
+* Methodology 
+
+* Model
+
+* Conclusion and Discussion
+
+* References
+bibliography:~/git/pdf/fishway/fishway.bib
+bibliographystyle:unsrt
+
