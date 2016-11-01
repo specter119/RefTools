@@ -96,8 +96,10 @@
 
 当你插入参考文献的条目后，在 org 里面会显示一个链接，光标移动到此链接上时，会在 Emacs 的底部显示文献的内容。也可以用鼠标点此链接选择菜单相应的内容（当然在 emacs 里面操起鼠标，显得太俗，所以 spacemacs 里面的 vim 模式，可以轻松的回车选择菜单进行操作）。
 * 资源
-[[https://github.com/jkitchin/org-ref][Org-ref]]
-[[https://github.com/tmalsburg/helm-bibtex][helm-bibtex]]
+[[http://book.emacs-china.org/][1. 子龙山人的 emacs book]]
+[[https://github.com/jkitchin/org-ref][2. Org-ref]]
+[[https://github.com/tmalsburg/helm-bibtex][3. helm-bibtex]]
+[[http://kitchingroup.cheme.cmu.edu/][4. kitchin Research Group]] 是一个专门讨论用 emacs, orgmode, org-ref 写学术论文的站点
 * 使用反馈
 * 其它
 ** 链接管理
