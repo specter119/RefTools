@@ -1,7 +1,7 @@
 #+title: JabRef
 * Introduction
 JabRef is a famous citation program, it's a graphical, easy to use, flexible application based on bib files.
-
+通常情况下，我只把 jabref 当成打开 bib 文件的一个工具而已，因为他轻量，很小，速度快，对 bib 文件完全兼容，支持多种编码格式。
 * Website
 You can view the details on the [[https://www.jabref.org/][Official Website]], if you just want to download the software and use it, please refer to [[https://sourceforge.net/projects/jabref/][Download link]] or you can find the source on [[https://github.com/JabRef/jabref][Github]], become a member of develop team.
 * Software
