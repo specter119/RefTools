@@ -38,6 +38,28 @@
         org-ref-default-bibliography '("~/Dropbox/bibliography/references.bib")
         org-ref-pdf-directory "~/Dropbox/bibliography/bibtex-pdfs/")
 #+END_SRC
+
+如果您的 bib 文件来自于 zoter,jabref 或者 mendely, 详细设置请参考[[https://github.com/tmalsburg/helm-bibtex#pdf-files][helm-bibtex]] ,需要作如下单独设置：
+ 
+#+BEGIN_SRC emacs-lisp
+ (defun my/org-ref-open-pdf-at-point ()
+    "Open the pdf for bibtex key under point if it exists."
+    (interactive)
+    (let* ((results (org-ref-get-bibtex-key-and-file))
+           (key (car results))
+           (pdf-file (car (bibtex-completion-find-pdf key))))
+      (if (file-exists-p pdf-file)
+          (org-open-file pdf-file)
+        (message "No PDF found for %s" key))))
+
+  (setq org-ref-open-pdf-function 'my/org-ref-open-pdf-at-point)
+#+END_SRC
+
+对于 Mendeley 用户来说，需要作如下单独设置：
+#+BEGIN_SRC emacs-lisp
+  (setq org-ref-open-pdf-function 'org-ref-get-mendeley-filename)
+#+END_SRC
+
 * 使用
 如果你的配置没有问题，使用 org-ref 需要打开，或者新建一个 org 文件，例如：
 #+BEGIN_SRC org
@@ -69,7 +91,11 @@
 
 #+END_SRC
 
-以上模板需要参照你自己的情况进行修改。
+以上模板需要参照你自己的情况进行修改,[[orgexample.org][模板下载]]。
+然后在您需要插入参考文献的位置按：C-c ], 就可以弹出参考文献列表，此时你可以输入关键字，helm 会为你选择并定位你需要处理的参考文献条目，如果您只需要插入文献，直接按 ret(回车)，如果您需要其它的操作，请按 tab 键，会弹出菜单让你选择相应的操作，比如你要添加笔记，你需要打开 pdf 等相关的操作。
 
+当你插入参考文献的条目后，在 org 里面会显示一个链接，光标移动到此链接上时，会在 Emacs 的底部显示文献的内容。也可以用鼠标点此链接选择菜单相应的内容（当然在 emacs 里面操起鼠标，显得太俗，所以 spacemacs 里面的 vim 模式，可以轻松的回车选择菜单进行操作）。
 * 资源
+[[https://github.com/jkitchin/org-ref][Org-ref]]
+
 * 使用反馈
