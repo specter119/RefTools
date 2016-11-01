@@ -8,7 +8,7 @@
 详细内容请看官方网站：[[https://github.com/jkitchin/org-ref][org-ref]] 
 * 安装使用
 ** spacemacs
-推荐使用[[https://github.com/syl20bnr/spacemacs][Spacemacs]]， 它让 emacs 的使用配置不再那么高高在上, spacemacs 也有中文网站对其使用进行指导，请见子龙山人的 github, 子龙山人对 emacs 中文化，spacemacs 的介绍做出了很大的贡献，创建了[[https://emacs-china.org/][emacs 中文社区]]。
+推荐使用[[https://github.com/syl20bnr/spacemacs][Spacemacs]]， 它让 [[https://www.gnu.org/software/emacs/index.html][emacs]] 的使用配置不再那么高高在上, [[https://github.com/syl20bnr/spacemacs][Spacemacs]] 也有中文网站对其使用进行指导，请见子龙山人的[[https://github.com/zilongshanren][https://github.com/zilongshanren]], 子龙山人对 emacs 中文化，spacemacs 的介绍做出了很大的贡献，创建了[[https://emacs-china.org/][emacs 中文社区]]。
 在 spacemacs 里面，只需要在 layer 里面添加: bibtex layer,并 spc f e R 就可以完成安装，安装完成后需要进行简单的配置：
 
 #+BEGIN_SRC emacs-lisp
@@ -91,11 +91,23 @@
 
 #+END_SRC
 
-以上模板需要参照你自己的情况进行修改,[[orgexample.org][模板下载]]。
+以上模板需要参照你自己的情况进行修改: [[orgexample.org][模板下载]] 。
 然后在您需要插入参考文献的位置按：C-c ], 就可以弹出参考文献列表，此时你可以输入关键字，helm 会为你选择并定位你需要处理的参考文献条目，如果您只需要插入文献，直接按 ret(回车)，如果您需要其它的操作，请按 tab 键，会弹出菜单让你选择相应的操作，比如你要添加笔记，你需要打开 pdf 等相关的操作。
 
 当你插入参考文献的条目后，在 org 里面会显示一个链接，光标移动到此链接上时，会在 Emacs 的底部显示文献的内容。也可以用鼠标点此链接选择菜单相应的内容（当然在 emacs 里面操起鼠标，显得太俗，所以 spacemacs 里面的 vim 模式，可以轻松的回车选择菜单进行操作）。
 * 资源
 [[https://github.com/jkitchin/org-ref][Org-ref]]
-
+[[https://github.com/tmalsburg/helm-bibtex][helm-bibtex]]
 * 使用反馈
+* 其它
+** 链接管理
+在*ux 系统（包括 mac osx)下面,都可以很方便的进行文件或者目录的链接，这样可以让你的文件存储路径与你的访问路径对应起来，一般来说，我们的文件可能存在同步盘里面，也可以分散在很电脑的不同分区，不同的目录，有的甚至目录的级别很深，这样就需要添加一个快捷方式直入主题，找到需要的文件，链接就相当有用了。通常情况下在类*ux 系统下面，我们会使用如下的操作：
+#+BEGIN_SRC shell
+  ln -s source-file-or-directory-path destination-path-file
+#+END_SRC
+但在 windows 下面，且有些不同，可以使用如下的命令：
+#+BEGIN_SRC shell
+  mklink /j destination-path source-path
+#+END_SRC
+这里需要注意的是：1.windows 的路径使用的是'\';2.windows 的目标和源路径与*ux 系统的是相反的；3.mklink 还有个选项 /d, 与/j 类似，都是作目录链接，但我理解/d 是硬链接，而/j 是符号连接，因为我最开始用的/d 在本来是已经建立链接目录里面再进行链接，结果异常，换成了/j 就正常了，所以以后建议大家都直接用 /j。
+是不是很有用？

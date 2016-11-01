@@ -33,5 +33,5 @@ Please see [Details](./jabref/README.org "JabRef Readme")
 [Official Site](https://www.citavi.com/)
 ####[DEVONthink(收费)]
 [Official Site](http://www.docear.org/) 
-####[org-ref](org-ref/README.org)
+####一个神奇的文献管理工具[org-ref](org-ref/README.org)
 [Official Site](https://github.com/jkitchin/org-ref)
