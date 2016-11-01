@@ -1,0 +1,75 @@
+#+title:ORG-REF 中文使用说明
+#+author:sxdxyxy
+* 简要介绍
+[[https://github.com/jkitchin/org-ref][org-ref ]]是 emacs orgmode 和 latex 模式使用的引用管理软件包，它不仅可能有效的管理参考文献，还可以管理 orgmode 的其它链接，并将其转化成 pdf 或者网页模式。org-ref 还可以通过 crossref, google scholar, doi, isbn 等直接查找并添加 reference 到 bib 文件中。对于学术研究来说，org-ref 还是一个非常方便的笔记软件，他与其它笔记软件相比，主要是依靠强大的 orgmode 的笔记整理功能，可以分类，标注，查询，整理并导出，而这所有的一切全都依靠纯文本的 org 文件。
+
+由于 org-ref 运行在 emacs 的 orgmode 模式下面，而 org-mode 的强大更加让 org-ref 成为了强大的文献管理工具。你如果要开始写论文了，那么从计划的制定、文献阅读、笔记记录和整理、论文的写作、数据的处理、图表的生成和处理、程序的编写调试运行并集成到你的论文中一气呵成，没有任何需要离开 emacs 的地方。
+
+详细内容请看官方网站：[[https://github.com/jkitchin/org-ref][org-ref]] 
+* 安装使用
+** spacemacs
+推荐使用[[https://github.com/syl20bnr/spacemacs][Spacemacs]]， 它让 emacs 的使用配置不再那么高高在上, spacemacs 也有中文网站对其使用进行指导，请见子龙山人的 github, 子龙山人对 emacs 中文化，spacemacs 的介绍做出了很大的贡献，创建了[[https://emacs-china.org/][emacs 中文社区]]。
+在 spacemacs 里面，只需要在 layer 里面添加: bibtex layer,并 spc f e R 就可以完成安装，安装完成后需要进行简单的配置：
+
+#+BEGIN_SRC emacs-lisp
+  (defun dotspacemacs/layers()
+    (dotspacemacs-configuration-layers
+     '(
+       (bibtex :variables
+               bibtex-completion-pdf-field "file"
+               ;;如果你想用 ivy 进行文献的插入管理，请使用 org-ref-default-bibliography
+               org-ref-default-bibliography 'org-ref-ivy-cite
+               bibtex-completion-bibliography "~/git/pdfs/fishway/fishway.bibfishway.bib"
+               bibtex-completion-library-path "~/git/pdfs/fishway"
+               org-ref-notes-directory "~/git/notes"
+               org-ref-bibliography-notes "~/git/article-note.org"
+               bibtex-completion-notes "~/git/article-note.org"
+               org-ref-pdf-directory "~/git/pdfs/fishway"
+               org-ref-default-bibliography "~/git/pdf/fishway/fishway.bib"
+               )
+  ))
+#+END_SRC
+
+以下是官方的配置，我将此配置已经全部写到 spacemacs 的配置里面去了，所以以下配置你可以忽略。
+#+BEGIN_SRC emacs-lisp
+  (setq reftex-default-bibliography '("~/Dropbox/bibliography/references.bib"))
+  ;; see org-ref for use of these variables
+  (setq org-ref-bibliography-notes "~/Dropbox/bibliography/notes.org"
+        org-ref-default-bibliography '("~/Dropbox/bibliography/references.bib")
+        org-ref-pdf-directory "~/Dropbox/bibliography/bibtex-pdfs/")
+#+END_SRC
+* 使用
+如果你的配置没有问题，使用 org-ref 需要打开，或者新建一个 org 文件，例如：
+#+BEGIN_SRC org
+  ,#+include: ../head.org 
+  ,#+latex_class: elsarticle
+  ,#+latex_class_options:[5p] 
+  ,#+options: title:nil author:nil
+  ,#+title: Title 
+  ,#+Author: Xiaoyun Yu 
+  ,#+BEGIN_abstract
+  Abstract Content
+  ,#+END_abstract
+  ,#+BEGIN_keyword
+  Keyword1, keyword2, \cdots
+  ,#+END_keyword
+  ,#+include: ../authors.org
+
+  ,* Introduction
+
+  ,* Methodology 
+
+  ,* Model
+
+  ,* Conclusion and Discussion
+
+  ,* References
+  bibliography:~/git/pdf/fishway/fishway.bib
+  bibliographystyle:unsrt
+
+#+END_SRC
+
+以上模板需要参照你自己的情况进行修改。
+
+* 资源
+* 使用反馈

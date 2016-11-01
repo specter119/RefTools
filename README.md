@@ -32,4 +32,6 @@ Please see [Details](./jabref/README.org "JabRef Readme")
 ####[Citavi(收费)]
 [Official Site](https://www.citavi.com/)
 ####[DEVONthink(收费)]
-[Official Site](http://www.docear.org/)
+[Official Site](http://www.docear.org/) 
+####[org-ref](org-ref/README.org)
+[Official Site](https://github.com/jkitchin/org-ref)

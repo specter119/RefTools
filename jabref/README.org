@@ -1,4 +1,4 @@
-#+title: Jabref
+#+title: JabRef
 * Introduction
 JabRef is a famous citation program, it's a graphical, easy to use, flexible application based on bib files.
 
