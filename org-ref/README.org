@@ -102,6 +102,46 @@
 [[http://kitchingroup.cheme.cmu.edu/][4. kitchin Research Group]] 是一个专门讨论用 emacs, orgmode, org-ref 写学术论文的站点
 * 使用反馈
 * 其它
+** 如何在 emacs 里用系统程序打开 pdf
+在 emacs 里面有很多看 pdf 文件的办法，但很多时候，在现在的桌面环境里面，用 Window, mac 自身的 pdf 阅读软件依然是很多 emacs 用户的选择，现在介绍一下如何在 emacs 里面用外部程序打开 pdf.
+方法是使用 openwith 插件。
+在 emacs 里面使用
+#+BEGIN_SRC emacs-lisp
+  M-x package-install ret
+  openwith
+#+END_SRC
+完成安装后，运行：
+#+BEGIN_SRC emacs-lisp
+  M-x customize-group
+  ret
+  openwith
+#+END_SRC
+进行设置，有两个变量需要设置。
+1. openwith-associations: ins, file 域填文件类型比如： .pdf, program 域填写打开的程序，比如：
+#+BEGIN_SRC shell 
+C:\Program Files\Tracker Software\PDF Viewer\PDFXCview.exe
+#+END_SRC
+parameters 域里面填写： (file)
+用同样的方法添加需要打开的其它类型文件。
+2. openwith mode, 直接点 toggle
+设置完成后点上面的 Apply and Save 按纽，对设置进行保存并立即生效。
+
+设置完成后，打开你的配置文件，可以看到如下配置：
+#+BEGIN_SRC emacs-lisp
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(openwith-associations
+     (quote
+      ((".pdf" "C:\\Program Files\\Tracker Software\\PDF Viewer\\PDFXCview.exe"
+        (file)))))
+   '(openwith-mode t)
+  )
+#+END_SRC
+如此设置就可以了，对于 mac os 系统和 linux 系统，设置方法类似。而且比在 windows 里面略简单，这里不重复了。
+
 ** 链接管理
 在*ux 系统（包括 mac osx)下面,都可以很方便的进行文件或者目录的链接，这样可以让你的文件存储路径与你的访问路径对应起来，一般来说，我们的文件可能存在同步盘里面，也可以分散在很电脑的不同分区，不同的目录，有的甚至目录的级别很深，这样就需要添加一个快捷方式直入主题，找到需要的文件，链接就相当有用了。通常情况下在类*ux 系统下面，我们会使用如下的操作：
 #+BEGIN_SRC shell
