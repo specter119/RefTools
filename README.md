@@ -13,9 +13,9 @@
     <th rowspan="2">
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/EndNote.png"  alt="Endnote" />
     </th>
-    <th >
+    <td >
         EndNote is the industry standard software tool for publishing and managing bibliographies, citations and references on the Windows and Macintosh desktop.
-    </th>
+    </td>
   </tr>
   <tr>
     <td >
