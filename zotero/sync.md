@@ -39,14 +39,14 @@
 　　![设置同步根目录](figs/sync_root_folder.png)
 
 2. 下载安装zofile  
-　　任意浏览器点开[官方4.2.6版链接](https://addons.cdn.mozilla.net/user-media/addons/284723/zotfile-4.2.6-fx.xpi)，下载后在zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-4.2.6-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
+　　任意浏览器点开[官方4.2.6版链接](https://addons.cdn.mozilla.net/user-media/addons/284723/zotfile-4.2.7-fx.xpi)，下载后在zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-4.2.7-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
 　　![安装插件](figs/install_plugin.png)
 
 3. 配置zotfie  
 　　打开`ZotFile Preferences ...`，`General Settings`标签页，`Source Folder for Attaching new Files`设置为`数据存储位置`下的`storage`。`Location of Files`设置为`链接附件的根目录`。
 　　![配置zotfile](figs/zotfile_settings.png)
 
-4. 同步&Enjoy!  
+4. 同步\&Enjoy!  
 　　开启同步就好了，对于已经存在本地的附件，请选中所有条目，右键`Manage Attachments`→`Rename Attachments`。
 
 ## 其他

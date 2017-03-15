@@ -7,6 +7,26 @@
 
 ## 文献管理
 ### 传统
+
+<table>
+  <tr>
+    <th rowspan="2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/EndNote.png"  alt="Endnote" />
+    </th>
+    <th >
+        EndNote is the industry standard software tool for publishing and managing bibliographies, citations and references on the Windows and Macintosh desktop.
+    </th>
+  </tr>
+  <tr>
+    <td >
+        <a href="http://endnote.com/">Official Site</a>
+    </td>
+  </tr>
+</table>
+
+
+
+
 #### [Endnote(收费)]
 [Official Site](http://endnote.com/)
 #### [NoteExpress(收费， 高校图书馆多有购买集团版 )](NoteExpress/noteexpress.md)
@@ -25,13 +45,13 @@
 [Official Site](https://www.mendeley.com/)
 #### [JabRef]
 [Official Site](http://www.jabref.org/)
-Please see [Details](./jabref/README.org "JabRef Readme")
+Please see [Details](jabref/README.org "JabRef Readme")
 ### 外延
 #### [Docear](docear/docear.md)
 [Official Site](http://www.docear.org/)
 #### [Citavi(收费)]
 [Official Site](https://www.citavi.com/)
 #### [DEVONthink(收费)]
-[Official Site](http://www.docear.org/) 
+[Official Site](http://www.docear.org/)
 #### 一个神奇的文献管理工具[org-ref](org-ref/README.org)
 [Official Site](https://github.com/jkitchin/org-ref)
