@@ -10,19 +10,23 @@
 
 | ![EndNote](https://upload.wikimedia.org/wikipedia/commons/0/01/EndNote.png) |EndNote is the industry standard software tool for publishing and managing bibliographies, citations and references on the Windows and Macintosh desktop.|
 |--:|:--|
-|　是否免费　| 否，部分单位购买了集团权限（如中科院）。 |
-|　是否开源　| 否 |
+| 是否免费 | 否，部分单位购买了集团权限（如中科院）。 |
+| 支持平台 | Windows, Mac|
+| 是否开源 | 否 |
 |Official links| [Site](http://endnote.com/) / [Training](http://endnote.com/training) |
 
 经典之作，这可能是数据库导出格式支援最好的文献管理软件。同时提供Windows与Mac版本。支持在外文数据库中进行全文下载
 
-| ![NoteExpress](http://www.inoteexpress.com/aegean/Public/images/logo.jpg) |NoteExpress 是北京爱琴海软件公司开发的一款专业级别的文献检索与管理系统，其核心功能涵盖“知识采集，管理，应用，挖掘”的知识管理的所有环节，是学术研究，知识管理的必备工具，发表论文的好帮手。|
+| ![NoteExpress](http://www.inoteexpress.com/aegean/Public/images/logo.jpg) | NoteExpress provides you a flexible, powerful and complete solution to efficiently manage your references, publications, and research documents. |
 |--:|:--|
-|　是否免费　| 否，部分单位购买了集团权限（如中科院）。 |
-|　是否开源　| 否 |
+| 是否免费 | 否，部分单位购买了集团权限（如中科院）。 |
+| 支持平台 | Windows, Mac|
+| 是否开源 | 否 |
 |Official links| [Site](http://endnote.com/) / [Training](http://endnote.com/training) |
 
-经典之作，这可能是数据库导出格式支援最好的文献管理软件。同时提供Windows与Mac版本。支持在外文数据库中进行全文下载
+高校图书馆多有购买集团版，仅有Windows版。
+软件内支持较多的中外文数据库中进行在线检索和全文下载。
+首页提供了培训视频，建议完整查看后再使用。
 
 #### [NoteExpress(收费， 高校图书馆多有购买集团版 )](NoteExpress/noteexpress.md)
 [Official Site](http://www.inoteexpress.com/aegean/)
