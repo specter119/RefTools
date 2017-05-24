@@ -10,7 +10,7 @@
 | 是否免费 | 是 |
 | 支持平台 | Windows |
 | 是否开源 | 否 |
-| 支持同步 | ? |
+| 支持同步 | ? |
 |Official links| [Site](http://interest.science.thomsonreuters.com/forms/HistCite/) |
 
 [sci2](https://sci2.cns.iu.edu/)
@@ -24,7 +24,7 @@
 | 是否免费 | 否 |
 | 支持平台 | Windows |
 | 是否开源 | 否 |
-| 支持同步 | ? |
+| 支持同步 | ? |
 |Official links| [Site](https://www.citavi.com/) |
 
 | <a href=docear/README.md><img src="http://www.docear.org/wp-content/themes/atahualpa/images/logoSM.png" width=200> | Docear is a unique solution to academic literature management, i.e. it helps you organizing, creating, and discovering academic literature. |
@@ -32,17 +32,17 @@
 | 是否免费 | 是 |
 | 支持平台 | Windows, Mac, Linux |
 | 是否开源 | 否 |
-| 支持同步 | ? |
+| 支持同步 | ? |
 |Official links| [Site](http://www.docear.org/) |
 
 在文献管理之余还提供了思维导图作为科研过程的辅助工具。
 
-| <a href=https://http://www.devontechnologies.com/><img src="http://at.blogs.wm.edu/files/2012/07/Devonthink.png" width=216> | Organize and work with all your documents — bookmarks, email messages, text files, images, PDFs — in one place, regardless where they originated. |
+| <a href=http://www.devontechnologies.com/><img src="http://at.blogs.wm.edu/files/2012/07/Devonthink.png" width=216> | Organize and work with all your documents — bookmarks, email messages, text files, images, PDFs — in one place, regardless where they originated. |
 |--:|:--|
 | 是否免费 | 否 |
 | 支持平台 | Mac |
 | 是否开源 | 是 |
-| 支持同步 | 否 |
+| 支持同步 | ? |
 |Official links| [Site](http://www.devontechnologies.com/) |
 
 | <a href=http://endnote.com/><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/EndNote.png" width=240> |EndNote is the industry standard software tool for publishing and managing bibliographies, citations and references on the Windows and Macintosh desktop.|
@@ -50,7 +50,7 @@
 | 是否免费 | 否，某些单位购买了集团权限（如中科院）。 |
 | 支持平台 | Windows, Mac |
 | 是否开源 | 否 |
-| 支持同步 | 仅条目 |
+| 支持同步 | ? |
 |Official links| [Site](http://endnote.com/) / [Training](http://endnote.com/training) |
 
 EndNote是一代经典之作，它可能是数据库导出格式支援最好的文献管理软件。它支持在外文数据库中进行全文下载。它也是惟一被Mac办公套件官方支持的文献管理软件。
@@ -60,7 +60,7 @@ EndNote是一代经典之作，它可能是数据库导出格式支援最好的�
 | 是否免费 | 是 |
 | 支持平台 | Windows |
 | 是否开源 | 否 |
-| 支持同步 | ? |
+| 支持同步 | ? |
 |Official links| [Site](http://elearning.cnki.net) |
 
 | <a href=https://www.mendeley.com/ ><img src="https://blog.engineeringvillage.com/sites/default/files/201504/7603613940_2423ae047f_o.png" width=216> | Mendeley is a reference manager and academic social network that can help you organize your research, collaborate with others online, and discover the latest research. |
@@ -68,7 +68,7 @@ EndNote是一代经典之作，它可能是数据库导出格式支援最好的�
 | 是否免费 | 是 |
 | 支持平台 | Windows, Mac, iOS, Android |
 | 是否开源 | 否 |
-| 支持同步 | 是，但服务器欠佳 |
+| 支持同步 | 是，但服务器欠佳 |
 |Official links| [Site](https://www.mendeley.com/) |
 
 Mendeley特色是可以提供机构内相关学者的研究进展，或是针对部分文献的相关文献推荐。
@@ -80,7 +80,7 @@ Mendeley特色是可以提供机构内相关学者的研究进展，或是针对
 | 是否免费 | 否，大多高校已购集团版。 |
 | 支持平台 | Windows |
 | 是否开源 | 否 |
-| 支持同步 | ? |
+| 支持同步 | ? |
 |Official links| [Site](http://www.inoteexpress.com/) / [Wiki](http://www.inoteexpress.com/wiki/index.php) |
 
 NoteExpress内支持较多的中外文数据库中进行在线检索和全文下载，建议完整查看首页培训视频后再使用。
@@ -90,7 +90,7 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | 是否免费 | 是 |
 | 支持平台 | Windows, Mac, Linux, iOS, Android |
 | 是否开源 | 是 |
-| 支持同步 | 否 |
+| 支持同步 | 否 |
 |Official links| [Site](https://www.readcube.com/) |
 
 [Scrivener](https://www.literatureandlatte.com/scrivener.php)
@@ -101,7 +101,7 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | 是否免费 | 是 |
 | 支持平台 | Windows, Mac, Linux |
 | 是否开源 | 是 |
-| 支持同步 | 支持条目同步，附件同步300Mb免费，可通过插件实现网盘同步 |
+| 支持同步 | 支持条目同步，附件同步300Mb免费，可通过插件实现网盘同步 |
 |Official links| [Site](https://www.zotero.org/) |
 
 开源全平台文献管理软件，拥有丰富的扩展插件及各种引文风格。
@@ -111,13 +111,13 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | <a href=org-ref/README.org><img src="https://www.gnu.org/graphics/bokma-emacs.png" width=180 > | org-mode modules for citations, cross-references, bibliographies in org-mode and useful bibtex tools to go with it. |
 |--:|:--|
 | 是否免费 | 是 |
-| 支持软件/网站 | Emacs |
+| 支持软件/网站 | Emacs |
 | 是否开源 | 是 |
 |Official links| [Site](https://github.com/jkitchin/org-ref) |
 
 | <a href=https://paperpile.com/ ><img src="https://cdn.paperpile.com/resources/website/images/logo.png?v=328" width=180> | No-fuss reference management for the web. Manage your research library right in your browser. |
 |--:|:--|
 | 是否免费 | 否 (30天免费试用) 学术版每月3美元，商业版每月10美元 |
-| 支持软件/网站 | GoogleDoc |
+| 支持软件/网站 | GoogleDoc |
 | 是否开源 | 否 |
 |Official links| [Site](https://paperpile.com/) |
