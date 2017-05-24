@@ -4,7 +4,7 @@
 
 ```sh
 brew cask install xquartz
-brew install wine --devel
+brew install wine --without-win64 --devel
 brew install winetricks
 ```
 
