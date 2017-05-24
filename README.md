@@ -96,7 +96,7 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 [Scrivener](https://www.literatureandlatte.com/scrivener.php)
 
 
-| <a href=zotero/README.md><img src="http://www.aplici.org/wp-content/uploads/2016/04/zotero-logo-520x245-300x141.png" width=216> | Zotero is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. |
+| <a href=zotero/README.md><img src="http://www.aplici.org/wp-content/uploads/2016/04/zotero-logo-520x245-300x141.png" width=160> | Zotero is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. |
 |--:|:--|
 | 是否免费 | 是 |
 | 支持平台 | Windows, Mac, Linux |
@@ -115,7 +115,7 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | 是否开源 | 是 |
 |Official links| [Site](https://github.com/jkitchin/org-ref) |
 
-| <a href=https://paperpile.com/ ><img src="https://cdn.paperpile.com/resources/website/images/logo.png?v=328" width=180> | No-fuss reference management for the web. Manage your research library right in your browser. |
+| <a href=https://paperpile.com/ ><img src="https://cdn.paperpile.com/resources/website/images/logo.png?v=328" width=160> | No-fuss reference management for the web. Manage your research library right in your browser. |
 |--:|:--|
 | 是否免费 | 否 (30天免费试用) 学术版每月3美元，商业版每月10美元 |
 | 支持软件/网站 | GoogleDoc |
