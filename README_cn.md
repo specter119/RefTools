@@ -74,7 +74,6 @@ EndNote是一代经典之作，它可能是数据库导出格式支援最好的�
 Mendeley特色是可以提供机构内相关学者的研究进展，或是针对部分文献的相关文献推荐。
 支持对英文PDF文献的元数据识别。
 
-
 | <a href=noteexpress/README.md ><img src="http://www.inoteexpress.com/aegean/Public/images/logo.jpg" width=216> | NoteExpress provides you a flexible, powerful and complete solution to efficiently manage your references, publications, and research documents. |
 |--:|:--|
 | 免费 | 否，大多高校已购集团版。 |
@@ -94,7 +93,6 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | 链接 | [主页](https://www.readcube.com/) |
 
 [Scrivener](https://www.literatureandlatte.com/scrivener.php)
-
 
 | <a href=zotero/README.md><img src="http://www.aplici.org/wp-content/uploads/2016/04/zotero-logo-520x245-300x141.png" width=160> | Zotero is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. |
 |--:|:--|
