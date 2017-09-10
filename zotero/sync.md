@@ -11,16 +11,14 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 实现本文同步附件方法前，请参考[Zotero开箱指南](startup.md)以保证Zotero正确安装配置。
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=2 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [Zotero跨平台同步附件的实现](#zotero跨平台同步附件的实现)
-	* [1. Zotero官网同步服务](#1-zotero官网同步服务)
-	* [2. Webdav同步](#2-webdav同步)
-	* [3. Zotfile生成附件链接配合同步盘](#3-zotfile生成附件链接配合同步盘)
-		* [其他](#其他)
-	* [4. 软链接配合同步盘](#4-软链接配合同步盘)
-	* [结语](#结语)
+* [1. Zotero官网同步服务](#1-zotero官网同步服务)
+* [2. Webdav同步](#2-webdav同步)
+* [3. Zotfile生成附件链接配合同步盘](#3-zotfile生成附件链接配合同步盘)
+* [4. 软链接配合同步盘](#4-软链接配合同步盘)
+* [结语](#结语)
 
 <!-- /code_chunk_output -->
 
