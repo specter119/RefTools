@@ -22,7 +22,6 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 <!-- /code_chunk_output -->
 
-
 ## 1. Zotero官网同步服务
 
 讲真，花钱省去配置的时间，也不是什么不好的事情。收费标准如下，供诸君考虑。
