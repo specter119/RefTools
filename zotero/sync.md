@@ -1,6 +1,6 @@
 # Zotero跨平台同步附件的实现
 
-Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：
+Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：
 
 - 不同设备
 - Windows
@@ -9,7 +9,7 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.m
 
 上的附件的同步，并对不同方法进行了简单的评价。
 
-实现本文同步附件方法前，请参考[Zotero开箱指南](startup.md)以保证Zotero正确安装配置。
+实现本文同步附件方法前，请参考[Zotero开箱指南](startup.md)以保证Zotero正确安装配置。
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -68,20 +68,26 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.m
 > `url链接`:图标为蓝色加小铁链。保存网络文件链接，联网时才能可以打开。
 
 1. 配置附件链接根目录
-  修改配置，设置`首选项`→`高级`→`文件和文件夹`中`链接附件的根目录`，这就是附件最终存放的位置，因此是同步盘能同步的位置。
-  ![设置同步根目录](figs/sync_root_folder.png)
+
+    修改配置，设置`首选项`→`高级`→`文件和文件夹`中`链接附件的根目录`，这就是附件最终存放的位置，因此是同步盘能同步的位置。
+    ![设置同步根目录](figs/sync_root_folder.png)
 
 1. 下载安装Zotfile
-  for Zotero 4.x: [4.2.8](https://addons.mozilla.org/firefox/downloads/latest/zotfile/type:attachment/addon-284723-latest.xpi), for Zotero 5.x: [5.0.4](https://github.com/jlegewie/zotfile/releases/download/v5.0.4/zotfile-5.0.4-fx.xpi)
-  下载后在zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-x.x.x-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
-  ![安装插件](figs/install_plugin.png)
+
+    for Zotero 4.x: [4.2.8](https://addons.mozilla.org/firefox/downloads/latest/zotfile/type:attachment/addon-284723-latest.xpi), for Zotero 5.x: [5.0.4](https://github.com/jlegewie/zotfile/releases/download/v5.0.4/zotfile-5.0.4-fx.xpi)
+
+    下载后在zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-x.x.x-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
+    ![安装插件](figs/install_plugin.png)
 
 1. 配置zotfie
-  打开`ZotFile Preferences ...`，`General Settings`标签页，`Source Folder for Attaching new Files`设置为`数据存储位置`下的`storage`。`Location of Files`设置为`链接附件的根目录`。
-  ![配置zotfile](figs/zotfile_settings.png)
+
+    打开`ZotFile Preferences ...`，`General Settings`标签页，`Source Folder for Attaching new Files`设置为`数据存储位置`下的`storage`。`Location of Files`设置为`链接附件的根目录`。
+
+    ![配置zotfile](figs/zotfile_settings.png)
 
 1. 同步\&Enjoy!
-  开启同步就好了，对于已经存在本地的附件，请选中所有条目，右键`Manage Attachments`→`Rename Attachments`。
+
+    开启同步就好了，对于已经存在本地的附件，请选中所有条目，右键`Manage Attachments`→`Rename Attachments`。
 
 ### 其他
 
