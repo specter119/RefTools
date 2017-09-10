@@ -72,7 +72,7 @@ Zotero分为两个部分，即独立版及浏览器插件。
 
 > 阅读安装以后内容，快速了解zotero的功能与使用方法
 
-[条目收录](https://www.zotero.org/support/zh/getting_stuff_into_your_library)
+[条目收录](https://www.zotero.org/support/zh/getting_stuff_into_your_library)
 
 [Word插文献](https://www.zotero.org/support/word_processor_plugin_usage)
 [Word插文献(经典模式)](https://www.zotero.org/support/word_processor_plugin_usage_classic)
