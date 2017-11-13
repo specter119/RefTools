@@ -42,15 +42,15 @@ Zotero分为两个部分，即独立版及浏览器插件。
 
     [注册Zotero账户](https://www.zotero.org/user/register/)，在`首选项`→`同步`→`设置`中填写账号密码。
 
-    > 注册过程有Google机器人验证，须科学上网。
+    > 注册过程含Google机器人验证，须科学上网。
 
     取消`首选项`→`同步`→`设置`中`文件同步`下面两个选项的勾选。
 
-    > Zotero免费账户仅含300Mb空间用于同步附件，故取消内置文件同步。
+    > Zotero免费账户仅含300Mb空间，且仅用于同步附件，故取消内置文件同步。
 
     ![同步设置](figs/cancel_sync_attachments.png)
 
-    用其它方式实现[附件同步](sync.md)。
+    想获得更多空间，以及更灵活的方案，参考[附件同步](sync.md)。
 
 1. 取消自动生成快照
 
@@ -62,7 +62,7 @@ Zotero分为两个部分，即独立版及浏览器插件。
 
     ![取消快照](figs/cancel_auto_snapshot.png)
 
-## 记录迁移
+## 文献迁移
 
 [通用](https://www.zotero.org/support/kb/importing)
 [自Endnote迁移](https://www.zotero.org/support/zh/kb/importing_records_from_endnote)
@@ -84,7 +84,7 @@ Zotero分为两个部分，即独立版及浏览器插件。
 
 ## 插件扩展
 
-[zotfile](http://zotfile.com/)
-[zotero-better-bibtex](https://github.com/retorquere/zotero-better-bibtex/wiki)(现在尚不支持Zotero5.0+)
+[Zotfile](http://zotfile.com/)
+[Zotero Better Bib(La)Tex](https://github.com/retorquere/zotero-better-bibtex/wiki)
 [Zutilo Utility for Zotero](https://addons.mozilla.org/firefox/addon/zutilo-utility-for-zotero/)
 [ZoteroQuickLook](https://addons.mozilla.org/firefox/addon/zoteroquicklook/)
