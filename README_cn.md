@@ -50,7 +50,7 @@
 | 免费 | 否，某些单位购买了集团权限（如中科院）。 |
 | 平台 | Windows, Mac |
 | 开源 | 否 |
-| 同步 | ? |
+| 同步 | 支持条目和附件（[仅支持一个数据库和一个账号](https://www.howsci.com/endnote-sync.html)） |
 | 链接 | [主页](http://endnote.com/) / [Training](http://endnote.com/training) |
 
 EndNote是一代经典之作，它可能是数据库导出格式支援最好的文献管理软件。它支持在外文数据库中进行全文下载。它也是惟一被Mac办公套件官方支持的文献管理软件。
@@ -60,7 +60,7 @@ EndNote是一代经典之作，它可能是数据库导出格式支援最好的�
 | 免费 | 是 |
 | 平台 | Windows |
 | 开源 | 否 |
-| 同步 | ? |
+| 同步 | 免费，支持条目和附件同步（10G） |
 | 链接 | [主页](http://elearning.cnki.net) |
 
 | <a href=https://www.mendeley.com/ ><img src="https://blog.engineeringvillage.com/sites/default/files/201504/7603613940_2423ae047f_o.png" width=216> | Mendeley is a reference manager and academic social network that can help you organize your research, collaborate with others online, and discover the latest research. |
@@ -79,7 +79,7 @@ Mendeley特色是可以提供机构内相关学者的研究进展，或是针对
 | 免费 | 否，大多高校已购集团版。 |
 | 平台 | Windows |
 | 开源 | 否 |
-| 同步 | ? |
+| 同步 | 登陆个人版账户可同步文献条目 |
 | 链接 | [主页](http://www.inoteexpress.com/) / [Wiki](http://www.inoteexpress.com/wiki/index.php) |
 
 NoteExpress内支持较多的中外文数据库中进行在线检索和全文下载，建议完整查看首页培训视频后再使用。
