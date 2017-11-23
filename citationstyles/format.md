@@ -1,6 +1,6 @@
-# 初识Zotero(Mendeley, Docear, ...) 参考文献格式化
+# 自定义Zotero参考文献格式
 
-> 基于CSL语言的参考文献管理软件，对参考文献书目格式的控制
+> 基于CSL语言的参考文献管理软件，对参考文献书目格式的控制方法。本文所述同样适用于Mendeley, Docear等软件，但具体功能实现方式略有差异，需读者自行摸索。
 
 对大多数人而言，"插文献"是使用文献管理软件的主要乃至唯一的作用。除去跟风装软件的懵懂少年，人们使用文献管理软件的目的是什么？
 
@@ -16,7 +16,7 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=3 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [1. 分清citation和bibliography](#1-分清citation和bibliography)
+* [1. 区分citation与bibliography](#1-区分citation与bibliography)
 * [2. 参考文献索引的格式化](#2-参考文献索引的格式化)
 * [3. 参考文献书目的格式化](#3-参考文献书目的格式化)
 	* [3.1 Zotero的题目(title)字段](#31-zotero的题目title字段)
@@ -26,11 +26,11 @@
 
 <!-- /code_chunk_output -->
 
-## 1. 分清citation和bibliography
+## 1. 区分citation与bibliography
 
 > 两个单词差这么多，你居然要我分清？！
 
-看英文单词，他们长得完全不一样，但在中文语境中沟通起来，一般只会用『参考文献』带过。所以，为了区分二者，在后文中做出如下规定：
+看英文单词，他们长得完全不一样，但在中文语境中沟通起来，一般只会以『参考文献』带过。所以，为了区分二者，在后文中做出如下规定：
 
 Citation称为**参考文献索引**，或简称**索引**。它就是正文中的[1~3,5]或者somebody (year)这样的东西。
 
@@ -45,12 +45,12 @@ Bibliography称为**参考文献书目**，或简称**书目**。它就是你正
 
 前面区分定义时，举例中已经表明，索引有两种格式：数字(number)与作者年代(author-year)。字面意思通俗易懂，并且CSL的一个分类方式也是按照索引的格式来的。
 
-但是，对于作者年代格式，需要多交代一句。很多期刊有这样的要求(一般使用作者年格式的期刊均有)：
+但是，对于作者年代格式，需要多交代一句，一般使用作者年格式的期刊均有这样的要求：
 
 * 句子中提到某个人时(即人名充当句子主谓成分时)，索引写做author(year)；
 * 引文对整个句子解释时(即人名不充当句子主谓成分时)，索引写做(author year)。
 
-本文建议的处理是，在Word的Zotero选项卡中，点击"Add/Edit Citation"![](https://www.zotero.org/support/_media/word_integration/zotero-toolbar-word-add-edit-citation-5.png?w=16&cache=nocache&tok=a54d12)
+本文建议的处理是，在Word的Zotero选项卡中，点击"Add/Edit Citation"![](https://www.zotero.org/support/_media/word_integration/zotero-toolbar-word-add-edit-citation-5.png?w=16&cache=nocache&tok=a54d12)。
 
 在弹出的索引编辑器中勾选
 
