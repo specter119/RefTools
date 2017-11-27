@@ -12,13 +12,7 @@
 
 <!-- /code_chunk_output -->
 
-Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：
-
-* Windows
-* Mac
-* Linux
-
-上的附件的同步，并对不同方法进行了简单的评价。
+Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：跨Windows/Mac/Linux平台(设备)上的附件的同步，并对不同方法进行了简单的评价。
 
 实现本文同步附件方法前，请参考[Zotero开箱指南](startup.md)以保证Zotero正确安装配置。
 
@@ -27,11 +21,11 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 从附件类型上来看，Zotero实现同步的方式不外乎两类：
 
 * 同步`文件`型附件，包括：
-  * [1. Zotero官网同步服务](#1-Zotero官网同步服务)
-  * [2. Webdav同步](#2-webdav同步)
-  * [4. 软链接配合同步盘](#4-软链接配合同步盘)
+  * Zotero官网同步服务
+  * Webdav同步
+  * 软链接配合同步盘
 * 同步`文件链接`型附件，包括：
-  * [3. Zotfile配合同步盘](#3-zotfile配合同步盘)
+  * Zotfile配合同步盘
 
 > Zotero附件类型包括：
 > * `文件`: 图标为系统默认图标或者adobe红，是Zotero默认的附件格式，存放在`<数据存储位置>/storage` 内一个8位数字和字母的子目录中。
@@ -64,9 +58,9 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 购买服务后，勾选`首选项`→`同步`→`设置`中文件同步下面两个选项。
 
-> 配置难度: 极简
-> 跨平台设备： 支持
-> 缺点: 继承`文件`附件缺点+如果你觉得贵
+> 配置难度: 极简，
+> 跨平台设备： 支持。
+> 缺点: 继承`文件`附件缺点 + 如果你觉得贵。
 
 ## 2. Webdav同步
 
@@ -74,9 +68,9 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 [坚果云收费方案](https://www.jianguoyun.com/s/pricing)(含免费方案)，充值前请先参考：[坚果云不再续费后的空间和流量如何计算](http://www.jianguoyun.com/s/help/?p=1582)。
 
-> 跨平台设备同步：支持
-> 配置难度: 简单
-> 缺点: 继承`文件`附件缺点+不支持断点续传+单文件不可超过100MB(坚果云政策)
+> 跨平台设备同步：支持，
+> 配置难度: 简单，
+> 缺点: 继承`文件`附件缺点 + 不支持断点续传 + 单文件不可超过100MB(坚果云政策)。
 
 ## 3. Zotfile配合同步盘
 
@@ -95,7 +89,7 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 1. 下载安装Zotfile
 
-    for Zotero 4.x: [4.2.8](https://addons.mozilla.org/firefox/downloads/latest/zotfile/type:attachment/addon-284723-latest.xpi), for Zotero 5.x: [5.0.4](https://github.com/jlegewie/zotfile/releases/download/v5.0.4/zotfile-5.0.4-fx.xpi)
+    for Zotero 4.x: [4.2.8](https://addons.mozilla.org/firefox/downloads/latest/zotfile/type:attachment/addon-284723-latest.xpi), for Zotero 5.x: [5.0.6](https://github.com/jlegewie/zotfile/releases/download/v5.0.4/zotfile-5.0.6-fx.xpi)
 
     下载后在Zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-x.x.x-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
     ![安装插件](figs/install_plugin.png)
@@ -115,14 +109,14 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 > 目前，webdav打开后，会对Zotfile产生附件链接产生影响，原因暂时不明。
 
 1. 软链接同步变更为Zotfile附件链接同步
-  装zotfile，**除了`附件链接根目录`不动**，剩下都按照本文叙述来，zotfile重命名后，再修改`附件链接根目录`。
+  装zotfile，**除了`附件链接根目录`不动**，剩下都按照本文叙述来，Zotfile重命名后，再修改`附件链接根目录`。
 
 1. 修改目录/更换网盘
   其实本质还是改目录，将`附件链接根目录`剪切到新位置，修改`附件链接根目录`和`Location of Files`为新位置即可。
 
-> 跨平台设备同步：支持
-> 配置难度: 中等
-> 缺点: 继承`文件链接`缺点
+> 跨平台设备同步：支持，
+> 配置难度: 中等，
+> 缺点: 继承`文件链接`缺点。
 
 ## 4. 软链接配合同步盘
 
@@ -135,20 +129,20 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 打开`命令提示符`:
 
-* for win7-: `win` + `R`, 输入`cmd`，回车
-* for win8+: `win` + `X`, `I`
+* for win7<sup>-</sup>: `win` + `R`, 输入`cmd`，回车
+* for win8<sup>+</sup>: `win` + `X`, `I`
 
 将`数据存储位置`storage剪切到你能同步的位置，然后创建链接:
 > Win7以上内置mklink，但是对于XP及以下，需下载：[Junction 1.07](https://docs.microsoft.com/zh-cn/sysinternals/downloads/junction)
 
-* for xp-: `<junction.exe的完整路径> "<数据存储位置>/storage" "<云盘中的storage位置>"`
-* for win7+: `mklink /J "<数据存储位置>/storage" "<云盘中的storage位置>"`
+* for xp<sup>-</sup>: `<junction.exe的完整路径> "<数据存储位置>/storage" "<云盘中的storage位置>"`
+* for win7<sup>+</sup>: `mklink /J "<数据存储位置>/storage" "<云盘中的storage位置>"`
 
 建议**不要与zotfile混用**，会让本方法变得更为复杂。
 
-> 跨平台设备同步：支持
-> 配置难度: 较难
-> 缺点: 继承`文件`附件缺点，配置难，继承官方同步的缺点
+> 跨平台设备同步：支持，
+> 配置难度: 较难，
+> 缺点: 继承`文件`附件缺点，配置难。
 
 ## 结语
 

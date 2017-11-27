@@ -23,7 +23,7 @@ LaTeX的集成开发环境(Integrated Development Environment, 简称IDE)的配
 
 [安装TeX Live套装](https://liam0205.me/texlive/)。
 
-多看书`texdoc`, 多查https://tex.stackexchange.com/，善于[提问](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)。
+多看书`texdoc`, 多查<https://tex.stackexchange.com/>，善于[提问](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)。
 
 > CTeX/LaTeX 交流群，QQ群号: 31752345，中文开发者云集的群。
 > 温馨提示，群里被群主虐过的才算萌新，否则只是渣渣。
