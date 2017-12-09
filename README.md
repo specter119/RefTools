@@ -99,7 +99,7 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | Price | Free of charge |
 | Platform | Windows, Mac, Linux |
 | Open source | 是 |
-| Sync | 条目Sync，附件Sync300MbPrice，可通过插件实现网盘Sync |
+| Sync | 题录Sync，附件Sync300MbPrice，可通过插件实现网盘Sync |
 | Useful urls | [Offical Site](https://www.zotero.org/) |
 
 Open source全Platform文献管理软件，拥有丰富的扩展插件及各种引文风格。

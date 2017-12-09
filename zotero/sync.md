@@ -6,13 +6,13 @@
 * [基础概念](#基础概念)
 * [1. Zotero官网同步服务](#1-zotero官网同步服务)
 * [2. Webdav同步](#2-webdav同步)
-* [3. Zotfile配合同步盘](#3-Zotfile配合同步盘)
+* [3. Zotfile配合同步盘](#3-zotfile配合同步盘)
 * [4. 软链接配合同步盘](#4-软链接配合同步盘)
 * [结语](#结语)
 
 <!-- /code_chunk_output -->
 
-Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：跨Windows/Mac/Linux平台(设备)上的附件的同步，并对不同方法进行了简单的评价。
+Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：跨Windows/Mac/Linux平台(设备)上的附件的同步，并对不同方法进行了简单的评价。
 
 实现本文同步附件方法前，请参考[Zotero开箱指南](startup.md)以保证Zotero正确安装配置。
 
@@ -38,10 +38,10 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 * `文件`附件：
   * 劣势：路径自定义程度低，`<数据存储位置>/storage`或`软链接`内8位数字和字母组成的子目录。
-  * 优势：删除条目，附件随之删除
+  * 优势：删除题录，附件随之删除
 * `文件链接`附件(特指由Zotfile生成):
   * 优势：路径自定义程度高
-  * 劣势：删除条目，附件不会随之删除，`链接附件的根目录`概念略费解。
+  * 劣势：删除题录，附件不会随之删除，`链接附件的根目录`概念略费解。
 
 ## 1. Zotero官网同步服务
 
@@ -58,18 +58,25 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 购买服务后，勾选`首选项`→`同步`→`设置`中文件同步下面两个选项。
 
-> 配置难度: 极简，
+> 配置难度: 极简，无需其他客户端
 > 跨平台设备： 支持。
 > 缺点: 继承`文件`附件缺点 + 如果你觉得贵。
 
 ## 2. Webdav同步
 
+支持webdav的云服务：[坚果云](https://www.jianguoyun.com/)，[Box.com](https://www.box.com/)
+
 设置方法见坚果云官方帮助：[webdav连接坚果云](http://help.jianguoyun.com/?p=3168)
 
 [坚果云收费方案](https://www.jianguoyun.com/s/pricing)(含免费方案)，充值前请先参考：[坚果云不再续费后的空间和流量如何计算](http://www.jianguoyun.com/s/help/?p=1582)。
 
+> Papership使用坚果云WebDav
+> 先将Zotero中的webdav重置，然后重置Papership的webdav。
+> 如果不行，在坚果云的zotero文件夹中创建空白的lastsync.txt文件，重试Papership的webdav连接。
+> 参考<http://bbs.jianguoyun.com/topic.php?id=6558>
+
 > 跨平台设备同步：支持，
-> 配置难度: 简单，
+> 配置难度: 简单，无需其他客户端
 > 缺点: 继承`文件`附件缺点 + 不支持断点续传 + 单文件不可超过100MB(坚果云政策)。
 
 ## 3. Zotfile配合同步盘
@@ -102,14 +109,14 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 1. 同步\&Enjoy!
 
-    开启同步就好了，对于已经存在本地的附件，请选中所有条目，右键`Manage Attachments`→`Rename Attachments`。
+    开启同步就好了，对于已经存在本地的附件，请选中所有题录，右键`Manage Attachments`→`Rename Attachments`。
 
 ### 其他
 
 > 目前，webdav打开后，会对Zotfile产生附件链接产生影响，原因暂时不明。
 
 1. 软链接同步变更为Zotfile附件链接同步
-  安装Zotfile，**保持`附件链接根目录`不动**，剩下都按照本文叙述来，Zotfile重命名后，再修改`附件链接根目录`。
+  安装Zotfile，**保持`附件链接根目录`不变**，剩下都按照本文叙述来，Zotfile重命名后，再修改`附件链接根目录`。
 
 1. 修改目录/更换网盘
   其实本质还是改目录，将`附件链接根目录`剪切到新位置，修改`附件链接根目录`和`Location of Files`为新位置即可。
@@ -146,6 +153,6 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 ## 结语
 
-以上四种方法皆可实现跨平台设备的条目同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合云盘同步的方法。云盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotfile对附件的管理。
+以上四种方法皆可实现跨平台设备的题录同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合云盘同步的方法。云盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotero对附件的管理。
 
 如有建议或问题，欢迎向[RefTools/issues](https://github.com/specter119/RefTools/issues)反馈，或在文末留言。

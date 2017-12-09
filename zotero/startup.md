@@ -4,7 +4,7 @@
 
 作为一款优秀开源文献管理软件软件，Zotero自身功能不俗，且拥有丰富的扩展，能满足更多人的不同需求。
 
-> 本文简述了安装和初始设定的必要设置，大多链接均指向官网文档。官方文档虽略显过时，但内容详尽且极少谬误。希望有志之士贡献翻译[Zotero Wiki](https://www.zotero.org/support/?do=login)
+> 本文简述了安装和初始设定的必要设置，多数链接均指向官网文档。官方文档虽略显过时，但内容详尽且极少错误。希望有志之士贡献翻译[Zotero Wiki](https://www.zotero.org/support/?do=login)
 
 ## 安装
 
@@ -31,9 +31,9 @@ Zotero分为两个部分，即独立版及浏览器插件。
     > `数据存储位置`是Zotero本地几乎所有的配置、文献数据库、插件数据库以及附件存放的地方。该目录下的`storage`子目录，存放有本地所有`文件`类型的附件。
 
     选择`首选项`→`高级`→`文件和文件夹`中的`数据存储位置`。
-    点选`自定义`，改为自己顺手的位置(Windows挪出C盘)。
+    点选`自定义`，改为自己顺手的位置(Windows建议挪出C盘)。
 
-    > Windows上将数据存储位置挪出C盘，避免重装系统造成的文献配置丢失。
+    > 建议Windows上将数据存储位置挪出C盘，避免重装系统造成的文献配置丢失。
     > 修改后Zotero会询问重启，绝大多数配置会丢失，因此应首先修改。
 
     ![设置同步根目录](figs/sync_root_folder.png)
@@ -42,7 +42,7 @@ Zotero分为两个部分，即独立版及浏览器插件。
 
     [注册Zotero账户](https://www.zotero.org/user/register/)，在`首选项`→`同步`→`设置`中填写账号密码。
 
-    > 注册过程含Google机器人验证，须科学上网。
+    > 注册过程含Google人机验证，须科学上网。
 
     取消`首选项`→`同步`→`设置`中`文件同步`下面两个选项的勾选。
 
@@ -74,7 +74,7 @@ Zotero分为两个部分，即独立版及浏览器插件。
 
 > 阅读安装以后内容，快速了解zotero的功能与使用方法
 
-[条目收录](https://www.zotero.org/support/zh/getting_stuff_into_your_library)
+[题录收录](https://www.zotero.org/support/zh/getting_stuff_into_your_library)
 
 [Word插文献](https://www.zotero.org/support/word_processor_plugin_usage)
 [Word插文献(经典模式)](https://www.zotero.org/support/word_processor_plugin_usage_classic)
