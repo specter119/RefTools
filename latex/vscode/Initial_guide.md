@@ -8,13 +8,13 @@ LaTeX的集成开发环境(Integrated Development Environment, 简称IDE)的配�
 1. 已经有专用编辑器了，为什么要用通用编辑器？
     因为不只写LaTeX。
 1. 相比传统『神级』编辑器(vim, emacs等)，新一代编辑器(VSCode, Atom)有何优势？
-    * 效率：传统编辑器高
-    * 难度：新编辑器上手简单
-    * 颜值：新编辑器高
+    - 效率：传统编辑器高
+    - 难度：新编辑器上手简单
+    - 颜值：新编辑器高
 1. Atom和VSCode孰优孰劣？
-    * 支持：Atom插件多且好，包括且不局限于LaTeX范围。
-    * 性能：VSCode好，启动快，大文件读写不卡(貌似和LaTeX没关系？)。
-    * 难度：VSCode上手难度比Atom略高。
+    - 支持：Atom插件多且好，包括且不局限于LaTeX范围。
+    - 性能：VSCode好，启动快，大文件读写不卡(貌似和LaTeX没关系？)。
+    - 难度：VSCode上手难度比Atom略高。
     > Atom，装插件即用，默认设置很少修改，几乎都不知道中间发生了什么。但VSCode，所有的配置都在`settings.json`中，使用者会更加明白发生了什么，包括默认设置做了什么。孰优孰劣，看各人喜好。
 
 综上所述，VSCode的适合人群：同时具有编程和LaTeX需求，且对编辑器性能要求较高，有一定动手能力的人们。
@@ -31,9 +31,9 @@ LaTeX的集成开发环境(Integrated Development Environment, 简称IDE)的配�
 
 ## VSCode的安装配置
 
-* Windows: 见[下载页面](https://code.visualstudio.com/download)，如使用绿色版且想从终端使用，将所在路径加入环境变量`%Path%`
-* Mac: `brew cask install visual-studio-code` [brew](https://brew.sh/), [cask](https://caskroom.github.io/)
-* Linux: [offical setup link](https://code.visualstudio.com/docs/setup/linux)
+- Windows: 见[下载页面](https://code.visualstudio.com/download)，如使用绿色版且想从终端使用，将所在路径加入环境变量`%Path%`
+- Mac: `brew cask install visual-studio-code` [brew](https://brew.sh/), [cask](https://caskroom.github.io/)
+- Linux: [offical setup link](https://code.visualstudio.com/docs/setup/linux)
 
 ## 安装 [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop)
 
@@ -108,15 +108,15 @@ LaTeX的集成开发环境(Integrated Development Environment, 简称IDE)的配�
 
 至此，一个简单可用的LaTeX环境就搭建好了：
 
-* 灵活更换引擎
-* 保存即编译
-* 软件内实现预览及同步
+- 灵活更换引擎
+- 保存即编译
+- 软件内实现预览及同步
 
 缺点：
 
-* 不支持自定软件预览pdf
-* 不能双击同步，不直观
-* 不支持代码格式化
-* 不支持语法检查
+- 不支持自定软件预览pdf
+- 不能双击同步，不直观
+- 不支持代码格式化
+- 不支持语法检查
 
 缺点的前两条会抽时间反馈给作者，剩下的两条通过继续配置可以实现，因此下一篇的内容可能是代码格式化以及语法检查。

@@ -20,28 +20,28 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 从附件类型上来看，Zotero实现同步的方式不外乎两类：
 
-* 同步`文件`型附件，包括：
-  * Zotero官网同步服务
-  * Webdav同步
-  * 软链接配合同步盘
-* 同步`文件链接`型附件，包括：
-  * Zotfile配合同步盘
+- 同步`文件`型附件，包括：
+  - Zotero官网同步服务
+  - Webdav同步
+  - 软链接配合同步盘
+- 同步`文件链接`型附件，包括：
+  - Zotfile配合同步盘
 
 > Zotero附件类型包括：
-> * `文件`: 图标为系统默认图标或者adobe红，是Zotero默认的附件格式，存放在`<数据存储位置>/storage` 内一个8位数字和字母的子目录中。
-> * `文件链接`: 图标为白色加小铁链，通常由Zotfile生成，实际保存在`链接附件的根目录`下。
-> * `url链接`: 图标为蓝色加小铁链，实际为文件的网址，联网时才能打开。
+> - `文件`: 图标为系统默认图标或者adobe红，是Zotero默认的附件格式，存放在`<数据存储位置>/storage` 内一个8位数字和字母的子目录中。
+> - `文件链接`: 图标为白色加小铁链，通常由Zotfile生成，实际保存在`链接附件的根目录`下。
+> - `url链接`: 图标为蓝色加小铁链，实际为文件的网址，联网时才能打开。
 >
 > 因此，本地只保存有`文件`与`文件链接`类型的附件。
 
 两类方法使用上的优劣：
 
-* `文件`附件：
-  * 劣势：路径自定义程度低，`<数据存储位置>/storage`或`软链接`内8位数字和字母组成的子目录。
-  * 优势：删除题录，附件随之删除
-* `文件链接`附件(特指由Zotfile生成):
-  * 优势：路径自定义程度高
-  * 劣势：删除题录，附件不会随之删除，`链接附件的根目录`概念略费解。
+- `文件`附件：
+  - 劣势：路径自定义程度低，`<数据存储位置>/storage`或`软链接`内8位数字和字母组成的子目录。
+  - 优势：删除题录，附件随之删除
+- `文件链接`附件(特指由Zotfile生成):
+  - 优势：路径自定义程度高
+  - 劣势：删除题录，附件不会随之删除，`链接附件的根目录`概念略费解。
 
 ## 1. Zotero官网同步服务
 
@@ -73,7 +73,7 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 > Papership使用坚果云WebDav
 > 先将Zotero中的webdav重置，然后重置Papership的webdav。
 > 如果不行，在坚果云的zotero文件夹中创建空白的lastsync.txt文件，重试Papership的webdav连接。
-> 参考<http://bbs.jianguoyun.com/topic.php?id=6558>
+> 参考 <http://bbs.jianguoyun.com/topic.php?id=6558#post-30230>
 
 > 跨平台设备同步：支持，
 > 配置难度: 简单，无需其他客户端
@@ -131,19 +131,19 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 > 它类似于Windows中的快捷方式，但更进一步。快捷方式只认你的鼠标双击，然而，软链接可以作为文件被其他应用访问，同样不怎么占地方。
 >
 > 参考创建软链接教程：
-> * [windows 文件文件夹映射junction和mklink，创建软硬链接](http://www.codes51.com/article/detail_223538.html)
-> * [The Complete Guide to Creating Symbolic Links (aka Symlinks) on Windows](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/)
+> - [windows 文件文件夹映射junction和mklink，创建软硬链接](http://www.codes51.com/article/detail_223538.html)
+> - [The Complete Guide to Creating Symbolic Links (aka Symlinks) on Windows](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/)
 
 打开`命令提示符`:
 
-* for win7<sup>-</sup>: `win` + `R`, 输入`cmd`，回车
-* for win8<sup>+</sup>: `win` + `X`, `I`
+- for win7<sup>-</sup>: `win` + `R`, 输入`cmd`，回车
+- for win8<sup>+</sup>: `win` + `X`, `I`
 
 将`数据存储位置`storage剪切到你能同步的位置，然后创建链接:
 > Win7以上内置mklink，但是对于XP及以下，需下载：[Junction 1.07](https://docs.microsoft.com/zh-cn/sysinternals/downloads/junction)
 
-* for xp<sup>-</sup>: `<junction.exe的完整路径> "<数据存储位置>/storage" "<云盘中的storage位置>"`
-* for win7<sup>+</sup>: `mklink /J "<数据存储位置>/storage" "<云盘中的storage位置>"`
+- for xp<sup>-</sup>: `<junction.exe的完整路径> "<数据存储位置>/storage" "<云盘中的storage位置>"`
+- for win7<sup>+</sup>: `mklink /J "<数据存储位置>/storage" "<云盘中的storage位置>"`
 
 建议**不要与Zotfile混用**，会让本方法变得更为复杂。
 

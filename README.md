@@ -3,6 +3,9 @@
 本Repo的目的是，收集当前的文献管理相关软件的一些用法，征集相关软件的安装配置使用技巧。
 软件按其英文名称排序，首行叙述皆取自官网或官方插件叙述，不代表作者立场。
 
+<!-- <https://www.library.wisc.edu/services/citation-managers/comparison-chart/>
+<https://en.wikipedia.org/w/index.php?title=Comparison_of_reference_management_software> -->
+
 ## 引文分析
 
 | <a href=histcite/README.md><img src="http://p.ananas.chaoxing.com/star3/origin/54194e01a3106c27b61afd5a.png" width=120> | HistCite is a software package used for bibliometric analysis and information visualization. |
