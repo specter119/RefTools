@@ -16,13 +16,13 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=3 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [1. 区分citation与bibliography](#1-区分citation与bibliography)
-* [2. 参考文献索引的格式化](#2-参考文献索引的格式化)
-* [3. 参考文献书目的格式化](#3-参考文献书目的格式化)
-	* [3.1 Zotero的题目(title)字段](#31-zotero的题目title字段)
-	* [3.2 Csl文件的使用及修改](#32-csl文件的使用及修改)
-	* [3.3 Word插件中使用书目编辑器](#33-word插件中使用书目编辑器)
-	* [3.4 Word中的"书目"样式](#34-word中的书目样式)
+- [1. 区分citation与bibliography](#1-区分citation与bibliography)
+- [2. 参考文献索引的格式化](#2-参考文献索引的格式化)
+- [3. 参考文献书目的格式化](#3-参考文献书目的格式化)
+	- [3.1 Zotero的题目(title)字段](#31-zotero的题目title字段)
+	- [3.2 Csl文件的使用及修改](#32-csl文件的使用及修改)
+	- [3.3 Word插件中使用书目编辑器](#33-word插件中使用书目编辑器)
+	- [3.4 Word中的"书目"样式](#34-word中的书目样式)
 
 <!-- /code_chunk_output -->
 
@@ -46,14 +46,14 @@
 
 但是，对于作者年代格式，需要多交代一句，一般使用作者年格式的期刊均有这样的要求：
 
-* 句子中提到某个人时(即人名充当句子主谓成分时)，索引写做author(year)；
-* 引文对整个句子解释时(即人名不充当句子主谓成分时)，索引写做(author year)。
+- 句子中提到某个人时(即人名充当句子主谓成分时)，索引写做author(year)；
+- 引文对整个句子解释时(即人名不充当句子主谓成分时)，索引写做(author year)。
 
 本文建议的处理是，在Word的Zotero选项卡中，点击"Add/Edit Citation"![](https://www.zotero.org/support/_media/word_integration/zotero-toolbar-word-add-edit-citation-5.png?w=16&cache=nocache&tok=a54d12)。在弹出的索引编辑器中勾选
 
 ![索引编辑器](https://www.zotero.org/support/_media/word_integration/edit_citation.png?cache=nocache)
 
-* [x] `略去作者`/`Suppres Author`
+- [x] `略去作者`/`Suppres Author`
 
 于是生成一个(year)格式的索引，author则直接写入正文。
 
@@ -63,20 +63,20 @@
 
 书目的格式化，按照2个层次，推荐4种方法给大家，建议顺序使用。
 
-* 内容+字体格式
-  * Zotero的题目(title)字段
-  * Csl文件的使用及修改
-  * Word插件中使用书目编辑器
-* 段落样式
-  * Word"书目"样式
+- 内容+字体格式
+  - Zotero的题目(title)字段
+  - Csl文件的使用及修改
+  - Word插件中使用书目编辑器
+- 段落样式
+  - Word"书目"样式
 
 ### 3.1 Zotero的题目(title)字段
 
 可以插入html语言的标签来达到给title字体格式的效果，一般用于化学/数学式中的上下角标，效果如下：
 
-* `稳重的题目<sup>上标</sup>` 效果: 稳重的题目<sup>上标</sup>
+- `稳重的题目<sup>上标</sup>` 效果: 稳重的题目<sup>上标</sup>
 
-* `积极的题目<sub>下标</sub>` 效果: 积极的题目<sub>下标</sub>
+- `积极的题目<sub>下标</sub>` 效果: 积极的题目<sub>下标</sub>
 
 下划线、粗体和斜体都也是html标签支持的，但一般来说，没有必要。
 
@@ -86,9 +86,9 @@
 
 Csl文件在整个书目格式化的过程中，占据最主要的地位。简而言之，它定义了2个东西。
 
-* 书目的组成与先后顺序
-* 书目各组成的字体格式
-  * 字体格式主要包括，上下标，粗斜体，以及不同规则字母大写
+- 书目的组成与先后顺序
+- 书目各组成的字体格式
+  - 字体格式主要包括，上下标，粗斜体，以及不同规则字母大写
 
 Citation style在线数据库有大量预定义的格式(本文写作时，zotero库中有8192种格式)，可以通过Zotero首选项直接安装，且现有的格式可以满足绝大多数需求。
 

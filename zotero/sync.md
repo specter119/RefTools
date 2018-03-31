@@ -12,7 +12,7 @@
 
 <!-- /code_chunk_output -->
 
-Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：跨Windows/Mac/Linux平台(设备)上的附件的同步，并对不同方法进行了简单的评价。
+Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md))。本文列举了实现跨平台/设备的四种方法，以实现：跨Windows/Mac/Linux平台(设备)上的附件的同步，并对不同方法进行了简单的评价。
 
 实现本文同步附件方法前，请参考[Zotero开箱指南](startup.md)以保证Zotero正确安装配置。
 
@@ -20,28 +20,28 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 从附件类型上来看，Zotero实现同步的方式不外乎两类：
 
-* 同步`文件`型附件，包括：
-  * Zotero官网同步服务
-  * Webdav同步
-  * 软链接配合同步盘
-* 同步`文件链接`型附件，包括：
-  * Zotfile配合同步盘
+- 同步`文件`型附件，包括：
+  - Zotero官网同步服务
+  - Webdav同步
+  - 软链接配合同步盘
+- 同步`文件链接`型附件，包括：
+  - Zotfile配合同步盘
 
 > Zotero附件类型包括：
-> * `文件`: 图标为系统默认图标或者adobe红，是Zotero默认的附件格式，存放在`<数据存储位置>/storage` 内一个8位数字和字母的子目录中。
-> * `文件链接`: 图标为白色加小铁链，通常由zotfile生成，实际保存在`链接附件的根目录`下。
-> * `url链接`: 图标为蓝色加小铁链，实际为文件的网址，联网时才能打开。
+> - `文件`: 图标为系统默认图标或者adobe红，是Zotero默认的附件格式，存放在`<数据存储位置>/storage` 内一个8位数字和字母的子目录中。
+> - `文件链接`: 图标为白色加小铁链，通常由Zotfile生成，实际保存在`链接附件的根目录`下。
+> - `url链接`: 图标为蓝色加小铁链，实际为文件的网址，联网时才能打开。
 >
 > 因此，本地只保存有`文件`与`文件链接`类型的附件。
 
 两类方法使用上的优劣：
 
-* `文件`附件：
-  * 劣势：路径自定义程度低，`<数据存储位置>/storage`或`软链接`内8位数字和字母组成的子目录。
-  * 优势：删除条目，附件随之删除
-* `文件链接`附件(特指由Zotfile生成):
-  * 优势：路径自定义程度高
-  * 劣势：删除条目，附件不会随之删除，`链接附件的根目录`概念略费解。
+- `文件`附件：
+  - 劣势：路径自定义程度低，`<数据存储位置>/storage`或`软链接`内8位数字和字母组成的子目录。
+  - 优势：删除题录，附件随之删除
+- `文件链接`附件(特指由Zotfile生成):
+  - 优势：路径自定义程度高
+  - 劣势：删除题录，附件不会随之删除，`链接附件的根目录`概念略费解。
 
 ## 1. Zotero官网同步服务
 
@@ -58,18 +58,25 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 购买服务后，勾选`首选项`→`同步`→`设置`中文件同步下面两个选项。
 
-> 配置难度: 极简，
+> 配置难度: 极简，无需其他客户端
 > 跨平台设备： 支持。
 > 缺点: 继承`文件`附件缺点 + 如果你觉得贵。
 
 ## 2. Webdav同步
 
+支持webdav的云服务：[坚果云](https://www.jianguoyun.com/)，[Box.com](https://www.box.com/)
+
 设置方法见坚果云官方帮助：[webdav连接坚果云](http://help.jianguoyun.com/?p=3168)
 
 [坚果云收费方案](https://www.jianguoyun.com/s/pricing)(含免费方案)，充值前请先参考：[坚果云不再续费后的空间和流量如何计算](http://www.jianguoyun.com/s/help/?p=1582)。
 
+> Papership使用坚果云WebDav
+> 先将Zotero中的webdav重置，然后重置Papership的webdav。
+> 如果不行，在坚果云的zotero文件夹中创建空白的lastsync.txt文件，重试Papership的webdav连接。
+> 参考 <http://bbs.jianguoyun.com/topic.php?id=6558#post-30230>
+
 > 跨平台设备同步：支持，
-> 配置难度: 简单，
+> 配置难度: 简单，无需其他客户端
 > 缺点: 继承`文件`附件缺点 + 不支持断点续传 + 单文件不可超过100MB(坚果云政策)。
 
 ## 3. Zotfile配合同步盘
@@ -94,22 +101,22 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
     下载后在Zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-x.x.x-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
     ![安装插件](figs/install_plugin.png)
 
-1. 配置zotfie
+1. 配置Zotfile
 
     打开`ZotFile Preferences ...`，`General Settings`标签页，`Source Folder for Attaching new Files`设置为`数据存储位置`下的`storage`。`Location of Files`设置为`链接附件的根目录`。
 
-    ![配置zotfile](figs/zotfile_settings.png)
+    ![配置Zotfile](figs/zotfile_settings.png)
 
 1. 同步\&Enjoy!
 
-    开启同步就好了，对于已经存在本地的附件，请选中所有条目，右键`Manage Attachments`→`Rename Attachments`。
+    开启同步就好了，对于已经存在本地的附件，请选中所有题录，右键`Manage Attachments`→`Rename Attachments`。
 
 ### 其他
 
 > 目前，webdav打开后，会对Zotfile产生附件链接产生影响，原因暂时不明。
 
 1. 软链接同步变更为Zotfile附件链接同步
-  装zotfile，**除了`附件链接根目录`不动**，剩下都按照本文叙述来，Zotfile重命名后，再修改`附件链接根目录`。
+  安装Zotfile，**保持`附件链接根目录`不变**，剩下都按照本文叙述来，Zotfile重命名后，再修改`附件链接根目录`。
 
 1. 修改目录/更换网盘
   其实本质还是改目录，将`附件链接根目录`剪切到新位置，修改`附件链接根目录`和`Location of Files`为新位置即可。
@@ -124,21 +131,21 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 > 它类似于Windows中的快捷方式，但更进一步。快捷方式只认你的鼠标双击，然而，软链接可以作为文件被其他应用访问，同样不怎么占地方。
 >
 > 参考创建软链接教程：
-> * [windows 文件文件夹映射junction和mklink，创建软硬链接](http://www.codes51.com/article/detail_223538.html)
-> * [The Complete Guide to Creating Symbolic Links (aka Symlinks) on Windows](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/)
+> - [windows 文件文件夹映射junction和mklink，创建软硬链接](http://www.codes51.com/article/detail_223538.html)
+> - [The Complete Guide to Creating Symbolic Links (aka Symlinks) on Windows](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/)
 
 打开`命令提示符`:
 
-* for win7<sup>-</sup>: `win` + `R`, 输入`cmd`，回车
-* for win8<sup>+</sup>: `win` + `X`, `I`
+- for win7<sup>-</sup>: `win` + `R`, 输入`cmd`，回车
+- for win8<sup>+</sup>: `win` + `X`, `I`
 
 将`数据存储位置`storage剪切到你能同步的位置，然后创建链接:
 > Win7以上内置mklink，但是对于XP及以下，需下载：[Junction 1.07](https://docs.microsoft.com/zh-cn/sysinternals/downloads/junction)
 
-* for xp<sup>-</sup>: `<junction.exe的完整路径> "<数据存储位置>/storage" "<云盘中的storage位置>"`
-* for win7<sup>+</sup>: `mklink /J "<数据存储位置>/storage" "<云盘中的storage位置>"`
+- for xp<sup>-</sup>: `<junction.exe的完整路径> "<数据存储位置>/storage" "<同步盘中的storage位置>"`
+- for win7<sup>+</sup>: `mklink /J "<数据存储位置>/storage" "<同步盘中的storage位置>"`
 
-建议**不要与zotfile混用**，会让本方法变得更为复杂。
+建议**不要与Zotfile混用**，会让本方法变得更为复杂。
 
 > 跨平台设备同步：支持，
 > 配置难度: 较难，
@@ -146,6 +153,6 @@ Zotero的条目同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 ## 结语
 
-以上四种方法皆可实现跨平台设备的条目同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合云盘同步的方法。云盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotfile对附件的管理。
+以上四种方法皆可实现跨平台设备的题录同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合同步盘同步的方法。同步盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotero对附件的管理。
 
 如有建议或问题，欢迎向[RefTools/issues](https://github.com/specter119/RefTools/issues)反馈，或在文末留言。

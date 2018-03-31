@@ -3,6 +3,9 @@
 本Repo的目的是，收集当前的文献管理相关软件的一些用法，征集相关软件的安装配置使用技巧。
 软件按其英文名称排序，首行叙述皆取自官网或官方插件叙述，不代表作者立场。
 
+<!-- <https://www.library.wisc.edu/services/citation-managers/comparison-chart/>
+<https://en.wikipedia.org/w/index.php?title=Comparison_of_reference_management_software> -->
+
 ## 引文分析
 
 | <a href=histcite/README.md><img src="http://p.ananas.chaoxing.com/star3/origin/54194e01a3106c27b61afd5a.png" width=120> | HistCite is a software package used for bibliometric analysis and information visualization. |
@@ -99,7 +102,7 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | Price | Free of charge |
 | Platform | Windows, Mac, Linux |
 | Open source | 是 |
-| Sync | 条目Sync，附件Sync300MbPrice，可通过插件实现网盘Sync |
+| Sync | 题录Sync，附件Sync300MbPrice，可通过插件实现网盘Sync |
 | Useful urls | [Offical Site](https://www.zotero.org/) |
 
 Open source全Platform文献管理软件，拥有丰富的扩展插件及各种引文风格。
