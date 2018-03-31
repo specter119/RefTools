@@ -40,83 +40,86 @@ LaTeX的集成开发环境(Integrated Development Environment, 简称IDE)的配�
 点选左侧扩展按钮，在展开的扩展栏顶端搜索LaTeX Workshop，搜到后点击安装。
 > 该扩展是当前编译 LaTeX 的全部依赖，微软官方的LaTeX Language Support已经停止开发。
 
-使用方法可以通过 `[Ctrl/Cmd + Shift + p]` 命令快捷方式中，搜索 latex workshop 获得。
+使用方法可以通过 `Ctrl/Cmd` + `Shift` + `p` 命令快捷方式中，搜索 latex workshop 获得。
 
-需要修改的主要内容，位于设置中`latex-workshop.latex.toolchain`，它是LaTeX Workshop编译LaTeX文件的命令串。本文通过设置 [Magic comments](https://github.com/James-Yu/LaTeX-Workshop#magic-comments) 和 [LaTeX-toolchain](https://github.com/James-Yu/LaTeX-Workshop#latex-toolchain)，来实现 `xelatex` > `bibtex` > `xelatex` > `xelatex` 的编译过程。
+现在的`LaTeX Workshop`配置，有些拗口，需要修改如下设置:
 
-使用 `[Ctrl/Cmd + ,]` 打开设置窗口，左侧为默认配置，右侧为用户的全局配置，在右侧加入(注意缩进)：
+> `LaTeX Workshop`升级到5.x版本后，右下角弹窗可将`toolchain`自动转换为`recipes`的，参考 [from toolchain to recipe](https://github.com/James-Yu/LaTeX-Workshop#from-toolchain-to-recipe) 了解更多。
+
+```yaml
+latex-workshop.latex.recipes: 编译的方案
+latex-workshop.latex.tools: 编译的命令及参数
+latex-workshop.latex.magic.args: 魔法注释命令的参数
+```
+
+> 编译方案 ([Latex recipes](https://github.com/James-Yu/LaTeX-Workshop#latex-recipe)) 就是不同tools的组合，把 `latex-workshop.latex.tools`串起来。
+> 魔法注释 ([Magic comments](https://github.com/James-Yu/LaTeX-Workshop#magic-comments))，用来定义编译引擎(pdflatex, xelatex 等)以及根文件 ([Root file](https://github.com/James-Yu/LaTeX-Workshop#root-file))。
+
+下面举例实现 `xelatex` > `bibtex` > `xelatex` > `xelatex` 的配置。
+
+使用 `Ctrl/Cmd` + `,` 打开设置窗口，左侧为默认配置，右侧为用户的全局配置，在右侧加入(注意缩进)：
 
 ```json
-    "latex-workshop.latex.toolchain": [
+    "latex-workshop.latex.recipes": [
         {
-            "command": "",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-shell-escape",
-                "%DOC%"
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
             ]
-        },
+        }
+    ],
+    "latex-workshop.latex.tools": [
         {
+            "name": "bibtex",
             "command": "bibtex",
             "args": [
-                "%DOCFILE%"
+              "%DOCFILE%"
             ]
         },
         {
-            "command": "",
+            "name": "xelatex",
+            "command": "xelatex",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "-shell-escape",
                 "%DOC%"
-            ]
-        },
-        {
-            "command": "",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-shell-escape",
-                "%DOC%"
-            ]
-        }],
+            ],
+        }
+    ],
 ```
 
-在tex的主文件，第一行前插入:
+> `Build Latex Project`使用`latex-workshop.latex.recipes`中的第一个。
+> `Build with recipe`可以手动选择`latex-workshop.latex.recipes`中的一个。
+> 如果不设置`latex-workshop.latex.recipes`，默认将使用`latexmk`编译，可以参考 [Configuration Files](http://mg.readthedocs.io/latexmk.html#configuration-files) 了解更多。
 
-```tex
-% !TEX program = xelatex
-```
-
-此时`latex-workshop.latex.toolchain`中留空(`""`)的`command`将被`xelatex`代替，形成 `xelatex` > `bibtex` > `xelatex` > `xelatex` 编译过程。
-
-反之，当主tex文件中不设置`% !TEX program`时候，将使用`latexmk`的默认设置`pdflatex`代替。这中方案可以较为灵活的切换`xelatex`与`pdflatex`编译。
-
-> 注意，如果你的`latexmk`的环境变量已经改掉了编译引擎，不设置`% !TEX program`也不再调用`pdflatex`，而是你修改后的引擎。
-
-其他tex文件，推荐第一行前插入：
+非根tex文件，建议第一行前插入：
 
 ```tex
 % !TEX root = 主文件相对路径
 ```
 
+> 当前版本，**不建议使用魔法注释定义引擎**。
+> 以前魔法注释定义的引擎相当于现在的`tools`，而现在定义的是只包含一步的`recipes`且优先级更高。所以，现在的魔法引擎使用情景非常有限，等待作者转换下思路。
+
+> 个人觉得，现在的魔法注释，要么写`latexmk`这种集成编译命令，或者编译不含文献的文档时候可以随便换`pdflatex`或者`xelatex`。但是针对含文献的情况，反而不如之前的版本灵活。
+> 如果诸位觉得现在的定义更好，可以留下你的方案给予建议。
+
 ## 结语
 
 至此，一个简单可用的LaTeX环境就搭建好了：
 
-- 灵活更换引擎
+- ~~灵活更换引擎~~(现在的魔法注释并不好用)
 - 保存即编译
 - 软件内实现预览及同步
+- 支持格式化
+- 支持同步
 
 缺点：
 
-- 不支持自定软件预览pdf
-- 不能双击同步，不直观
-- 不支持代码格式化
+- ~~不支持自定软件预览pdf~~(现在的说法是不官方支持)
 - 不支持语法检查
-
-缺点的前两条会抽时间反馈给作者，剩下的两条通过继续配置可以实现，因此下一篇的内容可能是代码格式化以及语法检查。

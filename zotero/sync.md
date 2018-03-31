@@ -142,8 +142,8 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 将`数据存储位置`storage剪切到你能同步的位置，然后创建链接:
 > Win7以上内置mklink，但是对于XP及以下，需下载：[Junction 1.07](https://docs.microsoft.com/zh-cn/sysinternals/downloads/junction)
 
-- for xp<sup>-</sup>: `<junction.exe的完整路径> "<数据存储位置>/storage" "<云盘中的storage位置>"`
-- for win7<sup>+</sup>: `mklink /J "<数据存储位置>/storage" "<云盘中的storage位置>"`
+- for xp<sup>-</sup>: `<junction.exe的完整路径> "<数据存储位置>/storage" "<同步盘中的storage位置>"`
+- for win7<sup>+</sup>: `mklink /J "<数据存储位置>/storage" "<同步盘中的storage位置>"`
 
 建议**不要与Zotfile混用**，会让本方法变得更为复杂。
 
@@ -153,6 +153,6 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 ## 结语
 
-以上四种方法皆可实现跨平台设备的题录同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合云盘同步的方法。云盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotero对附件的管理。
+以上四种方法皆可实现跨平台设备的题录同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合同步盘同步的方法。同步盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotero对附件的管理。
 
 如有建议或问题，欢迎向[RefTools/issues](https://github.com/specter119/RefTools/issues)反馈，或在文末留言。
