@@ -17,4 +17,3 @@ HistCite功能极其强大，使用的方法可以参考以下博文/课件。
 [From Scopus2Histocite，用histocite软件作从scopus网站二次引文分析 - leochina -简书](https://www.jianshu.com/p/47f9547187b4)
 
 但是，HistCite使用中会遇到几个麻烦的问题，且没有跨平台支持。本项目的其余篇幅将介绍问题的解决与非windows平台上的安装使用。
-
