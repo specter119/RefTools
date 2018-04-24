@@ -1,4 +1,4 @@
-# HistCite 在非 Wsindows 环境下的安装
+# HistCite 在非 Windows 环境下的安装
 
 ## 1. 安装
 

@@ -44,15 +44,15 @@ LaTeX的集成开发环境(Integrated Development Environment, 简称IDE)的配�
 
 现在的`LaTeX Workshop`配置，有些拗口，需要修改如下设置:
 
-> `LaTeX Workshop`升级到5.x版本后，右下角弹窗可将`toolchain`自动转换为`recipes`的，参考 [from toolchain to recipe](https://github.com/James-Yu/LaTeX-Workshop#from-toolchain-to-recipe) 了解更多。
+> `LaTeX Workshop`升级到5.x版本后，右下角弹窗可将`toolchain`自动转换为`recipes`的，参考 [from toolchain to recipe](https://github.com/James-Yu/LaTeX-Workshop#from-toolchain-to-recipe) 了解更多。
 
 ```yaml
-latex-workshop.latex.recipes: 编译的方案
+latex-workshop.latex.recipes: 编译的方案
 latex-workshop.latex.tools: 编译的命令及参数
-latex-workshop.latex.magic.args: 魔法注释命令的参数
+latex-workshop.latex.magic.args: 魔法注释命令的参数
 ```
 
-> 编译方案 ([Latex recipes](https://github.com/James-Yu/LaTeX-Workshop#latex-recipe)) 就是不同tools的组合，把 `latex-workshop.latex.tools`串起来。
+> 编译方案 ([Latex recipes](https://github.com/James-Yu/LaTeX-Workshop#latex-recipe)) 就是不同tools的组合，把 `latex-workshop.latex.tools`串起来。
 > 魔法注释 ([Magic comments](https://github.com/James-Yu/LaTeX-Workshop#magic-comments))，用来定义编译引擎(pdflatex, xelatex 等)以及根文件 ([Root file](https://github.com/James-Yu/LaTeX-Workshop#root-file))。
 
 下面举例实现 `xelatex` > `bibtex` > `xelatex` > `xelatex` 的配置。
@@ -103,11 +103,11 @@ latex-workshop.latex.magic.args: 魔法注释命令的参数
 % !TEX root = 主文件相对路径
 ```
 
-> 当前版本，**不建议使用魔法注释定义引擎**。
-> 以前魔法注释定义的引擎相当于现在的`tools`，而现在定义的是只包含一步的`recipes`且优先级更高。所以，现在的魔法引擎使用情景非常有限，等待作者转换下思路。
+> 当前版本，**不建议使用魔法注释定义引擎**。
+> 以前魔法注释定义的引擎相当于现在的`tools`，而现在定义的是只包含一步的`recipes`且优先级更高。所以，现在的魔法引擎使用情景非常有限，等待作者转换下思路。
 
-> 个人觉得，现在的魔法注释，要么写`latexmk`这种集成编译命令，或者编译不含文献的文档时候可以随便换`pdflatex`或者`xelatex`。但是针对含文献的情况，反而不如之前的版本灵活。
-> 如果诸位觉得现在的定义更好，可以留下你的方案给予建议。
+> 个人觉得，现在的魔法注释，要么写`latexmk`这种集成编译命令，或者编译不含文献的文档时候可以随便换`pdflatex`或者`xelatex`。但是针对含文献的情况，反而不如之前的版本灵活。
+> 如果诸位觉得现在的定义更好，可以留下你的方案给予建议。
 
 ## 结语
 
