@@ -42,9 +42,21 @@ LaTeX的集成开发环境(Integrated Development Environment, 简称IDE)的配�
 
 使用方法可以通过 `Ctrl/Cmd` + `Shift` + `p` 命令快捷方式中，搜索 latex workshop 获得。
 
-非主(根)tex文件开头，用魔法注释(Magic Comment)设置tex及bib编译命令。
-
 > 如下设置可实现 xelatex -> bibtex -> xelatex * 2 编译。
+
+使用 `Ctrl/Cmd` + `,` 打开设置窗口，左侧为默认配置，右侧为用户的全局配置，在右侧加入(注意缩进)：
+
+```json
+    "latex-workshop.latex.magic.args": [
+        "-shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+    ],
+```
+
+主(根)tex文件开头，用魔法注释(Magic Comment)设置tex及bib编译命令。
 
 ```tex
 % !TEX program = xelatex
