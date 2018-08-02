@@ -18,11 +18,10 @@ Zotero分为两个部分，即独立版及浏览器插件。
 > - 独立版支持: Windows, Mac, Linux
 >   Mac可用`brew cask`安装
 >   Linux下载后直接运行可执行文件，亦可通过收录源安装，此处不再赘述
-> - 浏览器支持: Chrome, Firefox, Safari, Opera
+> - 浏览器支持: Chrome, Firefox, Safari
 >   浏览器的选择：
 >   - Chrome: 最快，但需要科学上网
 >   - Fireworks & Safari: 网速慢对插件收录影响较大
->   - Opera: 内核与Chrome相同，无需科学上网，但性能本人未测试
 
 ## 初始设定
 

@@ -5,7 +5,7 @@
 Mac 系统
 
 ```sh
-brew install wine --without-win64 --devel
+brew install wine --devel
 ```
 
 Linux 系统，装上wine就可以，一般来说wine-devel功能强一些，稳定性也足够。
