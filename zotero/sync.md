@@ -83,7 +83,7 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 1. 配置附件链接根目录
 
-    `链接附件的根目录`是`文件链接`附件的实际位置，当Zotero访问`文件链接`附件时，会访问此目录下的相对路径。
+    `链接附件的根目录`是`文件链接`附件的实际位置，当Zotero访问`文件链接`附件时，会访问此目录下的相对路径。为了达到同步附件的目的，需要将`链接附件的根目录`设置为同步盘的子目录。
 
     > 相对路径的通俗理解：
     > 假如现在需要从外地去天安门，对于在不同地方上火车，都在北京西下车的两人来说：
@@ -96,7 +96,7 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 1. 下载安装Zotfile
 
-    for Zotero 4.x: [4.2.8](https://addons.mozilla.org/firefox/downloads/latest/zotfile/type:attachment/addon-284723-latest.xpi), for Zotero 5.x: [5.0.6](https://github.com/jlegewie/zotfile/releases/download/v5.0.4/zotfile-5.0.6-fx.xpi)
+    for Zotero 5.x: [5.0.6](https://github.com/jlegewie/zotfile/releases/download/v5.0.4/zotfile-5.0.6-fx.xpi), for Zotero 4.x: [4.2.8](https://addons.mozilla.org/firefox/downloads/latest/zotfile/type:attachment/addon-284723-latest.xpi)
 
     下载后在Zotero中打开`工具`→`插件`，按右上角齿轮选择`Install Add-on Form File ...`，选中刚刚下载的`zotfile-x.x.x-fx.xpi`文件进行安装(Mac和Win版本可以拖拽，为了通用性，不再赘述)。
     ![安装插件](figs/install_plugin.png)
@@ -153,6 +153,6 @@ Zotero的题录同步通过注册账号实现(见[Zotero开箱指南](startup.md
 
 ## 结语
 
-以上四种方法皆可实现跨平台设备的题录同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合同步盘同步的方法。同步盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotero对附件的管理。
+以上四种方法皆可实现跨平台设备的附件同步，差别在于实现的难易及花费。它们均有可取之处，本人倾向使用Zotfile生成链接附件，配合同步盘同步的方法。同步盘的同步更便于移动设备的访问，Zotifle的使用也加强了Zotero对附件的管理。
 
 如有建议或问题，欢迎向[RefTools/issues](https://github.com/specter119/RefTools/issues)反馈，或在文末留言。
