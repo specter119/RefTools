@@ -1,8 +1,8 @@
-# Spacemacs 一款鳌拜会选的 LaTex IDE？！
+# Spacemacs 一款鳌拜会选的 LaTeX IDE？！
 
 > 当因为各种原因，你最终需要选 {Vim/Emacs} 作为你的 LaTeX 编辑器的时候，小心了，你面临的是一个让人能打起来的问题。但是，你其实可以微微一笑，道出：“小孩子才做选择题，而我选择都(all)要(buy)！”
 
-Spacemacs 是一款整合 Vim 和 Emacs使用习惯的Emacs配置，它以最好的编辑器既不是Vim也不是Emacs而是二者的合体为标语，颇有鳌拜大人的风范。本文主要旨在利用 Spacemace 在 macOS/Linux 平台，配置实现快速编辑预览支持拼写检查和纠错的 Latex 编辑器。
+Spacemacs 是一款整合 Vim 和 Emacs使用习惯的Emacs配置，它以最好的编辑器既不是Vim也不是Emacs而是二者的合体为标语，颇有鳌拜大人的风范。本文主要旨在利用 Spacemace 在 macOS/Linux 平台，配置实现快速编辑预览支持拼写检查和纠错的 LaTeX 编辑器。
 
 > 不是 Windows 平台不能配置，而是 Windows 平台比 macOS 的坑更多，粗略配置完后还是较其余两个平台有差距，没更多时间和心情去踩windows的坑了，Windows的用户需要自力更生或者选择包括VSCode在内的其他编辑器。
 
@@ -48,7 +48,7 @@ Keywords=Text;Editor;
 ### macOS
 
 > macOS 么，一般不那么 geek 的人都想要个 app 执行这些带gui的软件。
-> 于是，我一开始的方案是 homebrew 里的 service 自启 + Automator 封装脚本为 "Emacs Client.app"，但是这样会让 Latex layer 找不到 `latexmk` 而无法编译。
+> 于是，我一开始的方案是 homebrew 里的 service 自启 + Automator 封装脚本为 "Emacs Client.app"，但是这样会让 LaTeX layer 找不到 `latexmk` 而无法编译。
 > 原因在于 macOS 通过 `launchctl` 自启动的话，`$PATH` 环境变量默认为空。
 
 经过一番折腾，最终我选择了，不跑 service 直接通过 "Emacs Client.app" 来启动服务，稍微有点不好的就是第一次跑 "Emacs Client.app" 需要跑2次，但也比去终端里重启 homebrew 的 service 要方便也快得多了。
@@ -66,11 +66,11 @@ Keywords=Text;Editor;
 
 > 更多方案，可见我[在 Emacs-China 的自问自答](https://emacs-china.org/t/macos-emacs-latex-emacs-client-latexmk/7996)。
 
-## LaTex layer
+## LaTeX layer
 
-基本配置及使用见 [开发主页 - LaTax layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/latex)
+基本配置及使用见 [开发主页 - LaTaX layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/latex)
 
-但是 macOS 会遇到一个每次启动重装 `LatexMk` 的bug(见 [spacemacs#10659](https://github.com/syl20bnr/spacemacs/issues/10659))，所以需要在 `dotspacemacs-configuration-layers` 为 latex layer 增加变量
+但是 macOS 会遇到一个每次启动重装 `auctex-latexmk` 的bug(见 [spacemacs#10659](https://github.com/syl20bnr/spacemacs/issues/10659))，所以需要在 `dotspacemacs-configuration-layers` 为 latex layer 增加变量
 
 ```lisp
   (latex :variables latex-build-command "LatexMk")
@@ -78,7 +78,7 @@ Keywords=Text;Editor;
 
 为不同平台配置viewer，以 macOS 使用 Skim.app 的 `displayline`，linux 系统使用 Okular 为例。
 
-> 现在基本不用定义 TeX-view-program-list 常用的都已经被[AucTex 内置](http://git.savannah.gnu.org/cgit/auctex.git/tree/tex.el#n1237)
+> 现在基本不用定义 TeX-view-program-list 常用的都已经被[AucTeX 内置](http://git.savannah.gnu.org/cgit/auctex.git/tree/tex.el#n1237)
 
 ```lisp
   (cond
@@ -91,7 +91,7 @@ Keywords=Text;Editor;
 
 ## Spell Checker layer
 
-基本配置及使用见 [开发主页 - LaTax layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/latex)
+基本配置及使用见 [开发主页 - LaTeX layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/latex)
 
 > macOS 没法默认使用 `aspell`
 > 当 shell 内的 $LANG 变量不为 en_US(或者其他英语locale) 时，最好设置ispell的默认词典为 english，插件的自动语言检测尤其在 client 模式下不好用
@@ -103,7 +103,7 @@ Keywords=Text;Editor;
 
 ## 自定义编译
 
-修改文本末尾的注释通过`AucTex`来实现自定义编译，会比直接编辑器配置来的直接方便。以下所有内容应该添加到文档末尾，且包含在以下内容之内。
+修改文本末尾的注释通过 `AucTeX` 来实现自定义编译，会比直接编辑器配置来的直接方便。以下所有内容应该添加到文档末尾，且包含在以下内容之内。
 
 ```tex
 %%% Local Variables:
@@ -137,12 +137,12 @@ Keywords=Text;Editor;
 %%% TeX-command-extra-options: "-shell-escape"
 ```
 
-更多附加参数请参考 [AucTex 4.1.3 Options for TeX Processors](https://www.gnu.org/software/auctex/manual/auctex/Processor-Options.html)
+更多附加参数请参考 [AucTeX 4.1.3 Options for TeX Processors](https://www.gnu.org/software/auctex/manual/auctex/Processor-Options.html)
 
 ## 结语
 
 本文虽然不是一步一截图风格的教程，但个人看来是官方文档的一个较好补充，基本配置需要修改的部分已经完全包含在文中了，链接更多是为了学习使用。
 
-当按照本文所述将以上两个 layer 配置好后，就能获得一个非常便捷好用的 LaTex 编辑器了，编辑文本的习惯和Vim一致(如果 spacemace 初始化的时候，都选择默认)，而快捷键则是有 spacemace 定制，可谓空格之内，4键可达。尤其当你使用 git 来管理的 latex project时，这些优势更加突出。
+当按照本文所述将以上两个 layer 配置好后，就能获得一个非常便捷好用的 LaTeX 编辑器了，编辑文本的习惯和Vim一致(如果 spacemace 初始化的时候，都选择默认)，而快捷键则是有 spacemace 定制，可谓空格之内，4键可达。尤其当你使用 git 来管理的 latex project时，这些优势更加突出。
 
-本人的 Spacemacs/Emacs/Vim 为入门级，配置目的是能用，力争好用，且 Emacs 还是蛮复杂的东西。所以望各位读者遇到问题，能够高台贵手，放过我，多求助于搜索引擎。这篇类似附加材料的东西，能博配置过 Latex layer 的大大们一笑足矣。
+本人的 Spacemacs/Emacs/Vim 为入门级，配置目的是能用，力争好用，且 Emacs 还是蛮复杂的东西。所以望各位读者遇到问题，能够高台贵手，放过我，多求助于搜索引擎。这篇类似附加材料的东西，能博配置过 LaTeX layer 的大大们一笑足矣。
