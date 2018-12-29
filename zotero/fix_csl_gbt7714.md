@@ -1,6 +1,6 @@
 # 自定义宏批量修改csl生成参考文献书目的错误
 
-鉴于csl还没有想好怎么支持多语言，见([csl/schema#63](https://github.com/citation-style-language/schema/issues/63))，但 GB/T 7714-{1987,2005,2015} 都有多语言的需求，导致现在 csl 没法生成完全正确的参考文献书目。生成中错误较显著的，就是多英文作者(多于4位)省略以“等”结尾，实际应为“et al.”
+鉴于 csl 还没有想好怎么支持多语言(见[csl/schema#63](https://github.com/citation-style-language/schema/issues/63))，但 GB/T 7714-{1987,2005,2015} 都有多语言的需求，导致现在 csl 没法生成完全正确的参考文献书目。生成中错误较显著的，就是多英文作者(多于4位)省略以“等”结尾，实际应为“et al.”
 
 > 实际问题还有很多，比如图书的版本，默认还是会写作“第n版”，同样与英文书不符。
 > 但是相对而言，作者比较好匹配，行首+中英文紧邻使错误尤为突出。
@@ -18,7 +18,7 @@
 
 [新建或编辑宏](https://support.office.com/zh-cn/article/%E5%88%9B%E5%BB%BA%E6%88%96%E8%BF%90%E8%A1%8C%E5%AE%8F-c6b99036-905c-49a6-818a-dfb98b7c3c9c)
 
-宏内容见下，且同步发布于[GitGist/fix_csl_gbt7714](https://gist.github.com/specter119/ea9440c8573aa0df266ea87745226d37)。
+宏内容见下，且同步发布于 [GitGist/fix_csl_gbt7714](https://gist.github.com/specter119/ea9440c8573aa0df266ea87745226d37) 。
 
 ```vb
 Sub deng2etal()
@@ -40,7 +40,7 @@ Sub deng2etal()
 End Sub
 ```
 
-写宏参考 [知乎 @johnmy 相关问题回答][johnmy] 写成，请务必不要修改csl的默认语言，以便生成书目均为“等”。
+写宏参考 [知乎 @johnmy 相关问题回答][johnmy] 写成，请务必不要修改csl的默认语言，以便生成书目均为“等”。
 
 > 删除了之前版本包含的`etal2geng`，因为csl需要修改，且宏保存运行时可能出问题。
 > 正则匹配中文看到了2个说法，[一-龥](见[Pinyin News博文][pinyin.info])和[⺀-￭](见[super user][super user])，在本人电脑上就出现了保存后vba再次打开就无法正常显示部分字符，且无法正常解析运行。
@@ -61,6 +61,6 @@ End Sub
 [pinyin.info]: http://pinyin.info/news/2016/how-to-find-chinese-characters-in-an-ms-word-document/
 [super user]: https://superuser.com/questions/983441/visual-studio-search-through-code-for-chinese-text
 
-1. [Zotero 如何设置引文列表中的“等”和“et al”混排？ - johnmy的回答 - 知乎](https://www.zhihu.com/question/39156067/answer/145700137)
+1. [Zotero 如何设置引文列表中的“等”和“et al”混排？- johnmy的回答 - 知乎](https://www.zhihu.com/question/39156067/answer/145700137)
 1. [How to find Chinese characters in an MS Word document](http://pinyin.info/news/2016/how-to-find-chinese-characters-in-an-ms-word-document/)
 1. [Visual Studio - Search through code for Chinese text](https://superuser.com/questions/983441/visual-studio-search-through-code-for-chinese-text)
