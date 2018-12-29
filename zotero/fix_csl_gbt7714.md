@@ -7,7 +7,7 @@
 > 同时，GB/T 7714-{1987,2005} 的 csl，完成度还不够高(csl自述及研究过的同学反馈)，且最新版本 GB/T 7714-2015 (其实三个版本差距都不大) 还没有相匹配的 csl。真正一个完成度更高的 GB/T 7714-2015，需要正则修改的可能更多，也更难。
 > GB/T 7714 里面一些规定也不合理，比如英文作者完全大写，最终效果也很丑。
 
-## 新建自定义宏
+## 1. 新建自定义宏
 
 首先，先调出“开发工具”标签页。
 
@@ -29,7 +29,7 @@ Sub deng2etal()
     With Selection.Find
         .Forward = True
         .ClearFormatting
-        .Text = "([A-z]@)等"
+        .Text = "(<[A-z]@)等"
         With .Replacement
             .ClearFormatting
             .Text = "\1, et al"
@@ -38,35 +38,19 @@ Sub deng2etal()
         .Execute Replace:=wdReplaceAll, MatchWildcards:=True
     End With
 End Sub
-Sub etal2deng()
-'
-' etal2deng macro
-' 汉字[, ]et al -> 汉字等
-'
-    With Selection.Find
-        .Forward = True
-        .ClearFormatting
-        .Text = "([⺀-￭]@)([, ]*)et al"
-        With .Replacement
-            .ClearFormatting
-            .Text = "\1\2等"
-        End With
-        .Wrap = wdFindStop
-        .Execute Replace:=wdReplaceAll, MatchWildcards:=True
-    End With
-End Sub
 ```
 
-写宏参考 [知乎 @johnmy 相关问题回答][johnmy] 及 [Pinyin News博文][pinyin.info] 写成。仓促编写而成，可能对et al后面的点考虑不周，如果使用中et al和等替换后的内容没有达到最终效果，请联系我修改。
+写宏参考 [知乎 @johnmy 相关问题回答][johnmy] 写成，请务必不要修改csl的默认语言，以便生成书目均为“等”。
 
-> 默认行为全部生成“等”，使用`deng2etal`即可，反之，用`etal2geng`。
-> 如前文所言，即使运行了，还是会有个别错误，暂时没有计划把这个宏做的很长很丰富的计划。
+> 删除了之前版本包含的`etal2geng`，因为csl需要修改，且宏保存运行时可能出问题。
+> 正则匹配中文看到了2个说法，[一-龥](见[Pinyin News博文][pinyin.info])和[⺀-￭](见[super user][super user])，在本人电脑上就出现了保存后vba再次打开就无法正常显示部分字符，且无法正常解析运行。
+> 如前文所言，即使运行了，还是书目会有个别其他错误，暂时没有计划把这个宏做的很长很丰富的计划。
 
-## 生成快速访问工具栏按钮
+## 2. 生成快速访问工具栏按钮
 
 [为宏添加按钮](https://support.office.com/zh-cn/article/%E5%B0%86%E5%AE%8F%E5%88%86%E9%85%8D%E7%BB%99%E6%8C%89%E9%92%AE-728c83ec-61d0-40bd-b6ba-927f84eb5d2c#OfficeVersion=macOS)
 
-## 用法
+## 3. 用法
 
 如果没有选择区域，本文的宏会对光标后到文末进行替换，所以，替换前应选中所有书目或者将光标定位到“参考文献”标题位置。
 点一下刚刚配置的快速访问工具栏按钮，即可。
@@ -75,6 +59,8 @@ End Sub
 
 [johnmy]: https://www.zhihu.com/question/39156067/answer/145700137
 [pinyin.info]: http://pinyin.info/news/2016/how-to-find-chinese-characters-in-an-ms-word-document/
+[super user]: https://superuser.com/questions/983441/visual-studio-search-through-code-for-chinese-text
 
 1. [Zotero 如何设置引文列表中的“等”和“et al”混排？ - johnmy的回答 - 知乎](https://www.zhihu.com/question/39156067/answer/145700137)
 1. [How to find Chinese characters in an MS Word document](http://pinyin.info/news/2016/how-to-find-chinese-characters-in-an-ms-word-document/)
+1. [Visual Studio - Search through code for Chinese text](https://superuser.com/questions/983441/visual-studio-search-through-code-for-chinese-text)
