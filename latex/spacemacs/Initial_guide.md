@@ -89,7 +89,7 @@ Keywords=Text;Editor;
   )
 ```
 
-* [ ] macOS平台使用 `displayline` 预览时，无法实现反向搜索，以后有解决方案会更新。
+macOS 支持正反搜索的软件并不多，Skim.app 是其中之一，但是和 emacs 无法找到 `latexmk` 一样，现在的 macOS 中，需要在 选项 -> 同步中，先选择 emacs，然后再切换为自定义，将 `emacsclient` 路径改为完整路径。
 
 ## Spell Checker layer
 
