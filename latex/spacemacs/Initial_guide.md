@@ -80,6 +80,8 @@ Keywords=Text;Editor;
 
 > 现在基本不用定义 TeX-view-program-list 常用的都已经被[AucTeX 内置](http://git.savannah.gnu.org/cgit/auctex.git/tree/tex.el#n1237)
 
+在 `defun dotspacemacs/user-config` 添加
+
 ```lisp
   (cond
    ((spacemacs/system-is-mac) (setq TeX-view-program-selection '((output-pdf "displayline"))))
@@ -93,8 +95,8 @@ Keywords=Text;Editor;
 
 基本配置及使用见 [开发主页 - LaTeX layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/latex)
 
-> macOS 没法默认使用 `aspell`
-> 当 shell 内的 $LANG 变量不为 en_US(或者其他英语locale) 时，最好设置ispell的默认词典为 english，插件的自动语言检测尤其在 client 模式下不好用
+> macOS 没法默认使用 `aspell`，如果 macOS下使用 `aspell` 需要设置 ispell-program-name。
+> 当 shell 内的 $LANG 变量不为 en_US(或者其他英语locale) 时，最好设置ispell的默认词典为 english，插件的自动语言检测尤其在 client 模式下不好用。
 
 ```lisp
   (setq ispell-program-name "aspell")
@@ -108,6 +110,7 @@ Keywords=Text;Editor;
 ```tex
 %%% Local Variables:
 %%% mode: latex
+%%% coding: utf-8
 你需要增加的自定义内容
 %%% End:
 ```
@@ -123,17 +126,18 @@ Keywords=Text;Editor;
 主文档
 
 ```tex
-%%% coding: utf-8
+
 %%% TeX-master: t
 ```
 
 ### 自定义编辑引擎，附加参数(以实现`xelatex`为例)
 
-> 并未测试
+在需要编辑(发起编译)的tex文档中加入
+
+> 无论是主文档或者从文档，只要需要从该文档发起编译，都应添加。
 
 ```tex
-
-%%% TeX-check-engine: xetex
+%%% TeX-engine: xetex
 %%% TeX-command-extra-options: "-shell-escape"
 ```
 
