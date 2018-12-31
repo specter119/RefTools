@@ -1,4 +1,4 @@
-# Zotero跨平台同步附件的实现
+# Zotero 跨平台同步附件的实现
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=2 orderedList=false} -->
 <!-- code_chunk_output -->
