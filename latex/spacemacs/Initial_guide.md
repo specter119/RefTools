@@ -2,9 +2,9 @@
 
 > 当因为各种原因，你最终需要选 {Vim/Emacs} 作为你的 LaTeX 编辑器的时候，小心了，你面临的是一个让人能打起来的问题。但是，你其实可以微微一笑，道出：“小孩子才做选择题，而我选择都(all)要(buy)！”
 
-Spacemacs 是一款整合 Vim 和 Emacs使用习惯的Emacs配置，它以最好的编辑器既不是Vim也不是Emacs而是二者的合体为标语，颇有鳌拜大人的风范。本文主要旨在利用 Spacemace 在 macOS/Linux 平台，配置实现快速编辑预览支持拼写检查和纠错的 LaTeX 编辑器。
+Spacemacs 是一款整合 Vim 和 Emacs 使用习惯的Emacs配置，它以最好的编辑器既不是 Vim 也不是 Emacs 而是二者的合体为标语，颇有鳌拜大人的风范。本文主要旨在利用 Spacemace 在 macOS/Linux 平台，配置实现快速编辑预览支持拼写检查和纠错的 LaTeX 编辑器。
 
-> 不是 Windows 平台不能配置，而是 Windows 平台比 macOS 的坑更多，粗略配置完后还是较其余两个平台有差距，没更多时间和心情去踩windows的坑了，Windows的用户需要自力更生或者选择包括VSCode在内的其他编辑器。
+> 不是 Windows 平台不能配置，而是 Windows 平台比 macOS 的坑更多，粗略配置完后还是较其余两个平台有差距，没更多时间和心情去踩 Windows 的坑了，Windows 的用户需要自力更生或者选择包括 VSCode 在内的其他编辑器。
 
 在某些开发大神看来，Spacemacs 配置起来已经简单的不的了，但是笔者仍需提醒，Spacemacs 适用的是折腾能力较强，喜欢纯键盘操作多过键盘鼠标操作，对编辑器有较高的自定义需求的人群。当你选择了 Spacemacs 时候，意味着你最好熟悉类Linux终端及shell的基本操作，以及入门级别的`git`使用能力。
 
@@ -20,13 +20,11 @@ Spacemacs 是一款整合 Vim 和 Emacs使用习惯的Emacs配置，它以最好
 
 ## [可选] emacsclient 的配置
 
+通过 deamon 模式跑一个 `emacs` 服务器，然后 `emacsclient` 去连接这个服务器，会感觉 `emacs` 是秒开的，并且保存 `emacs`的编辑状态。这虽然不是必须的，但真心觉得配置了方便。
+
 ### Linux
 
-> 通常 Spacemacs 会导致 emacs 启动略慢，配置 emacsclient 不禁规避掉了这个问题，也用户保存上次编辑的状态。
-
-通过 deamon 模式跑一个 `emacs` 服务器，然后 `emacsclient` 去连接这个服务器，就会让实际启动 `emacs` 秒开，并且保存 `emacs`的编辑状态。这虽然不是必须的，但真心觉得配置了方便。
-
-对于 Linux 以 Archlinux 为例，只需要在 `$HOME/.local/share/applications` 新建 `emacsclient.desktop`即可，内容建议:
+对于 Linux 以 Archlinux 为例，只需要在 `$HOME/.local/share/applications/` 目录中新建 `emacsclient.desktop`即可，内容建议:
 
 ```conf
 [Desktop Entry]
@@ -43,17 +41,19 @@ StartupWMClass=Emacs
 Keywords=Text;Editor;
 ```
 
-* [ ] 如果有必要，以后补充一个shell内 emacsclient 的 alias/function 。
+* [ ] 如果有必要，以后补充一个shell内 `emacsclient` 的 alias/function 。
 
 ### macOS
 
-> macOS 么，一般不那么 geek 的人都想要个 app 执行这些带gui的软件。
+> macOS 么，一般不那么 geek 的人都想要个图形界面启动的方式（.app）。
 > 于是，我一开始的方案是 homebrew 里的 service 自启 + Automator 封装脚本为 "Emacs Client.app"，但是这样会让 LaTeX layer 找不到 `latexmk` 而无法编译。
 > 原因在于 macOS 通过 `launchctl` 自启动的话，`$PATH` 环境变量默认为空。
 
-经过一番折腾，最终我选择了，不跑 service 直接通过 "Emacs Client.app" 来启动服务，稍微有点不好的就是第一次跑 "Emacs Client.app" 需要跑2次，但也比去终端里重启 homebrew 的 service 要方便也快得多了。
+经过一番折腾，最终我选择了，不跑 service 直接通过 "Emacs Client.app" 来启动服务，稍微有点不优雅的就是第一次打开 "Emacs Client.app" 需要跑2次，但也比去终端里重启 homebrew 的 service 要方便也快得多了。
 
 打开 Automator，新建文稿，应用程序，运行 Shell 脚本。
+
+> 此处以`emacs`及`emacsclient`都从`/usr/local/bin`目录下直接访问为例，实际填写时，请以自己机器上的绝对路径为准。
 
 * Shell: `/bin/sh`
 * 传递输入: 作为自变量
@@ -70,7 +70,7 @@ Keywords=Text;Editor;
 
 基本配置及使用见 [开发主页 - LaTaX layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/latex)
 
-但是 macOS 会遇到一个每次启动重装 `auctex-latexmk` 的bug(见 [spacemacs#10659](https://github.com/syl20bnr/spacemacs/issues/10659))，所以需要在 `dotspacemacs-configuration-layers` 为 latex layer 增加变量
+但是 macOS 会遇到一个每次启动重装 `auctex-latexmk` 的bug(见 [spacemacs#10659](https://github.com/syl20bnr/spacemacs/issues/10659))，所以需要在 `dotspacemacs-configuration-layers` 为 LaTeX layer 增加变量
 
 ```lisp
   (latex :variables latex-build-command "LatexMk")
@@ -78,7 +78,7 @@ Keywords=Text;Editor;
 
 为不同平台配置viewer，以 macOS 使用 Skim.app 的 `displayline`，linux 系统使用 Okular 为例。
 
-> 现在基本不用定义 TeX-view-program-list 常用的都已经被[AucTeX 内置](http://git.savannah.gnu.org/cgit/auctex.git/tree/tex.el#n1237)
+> 现在基本不用定义 TeX-view-program-list 常用的都已经被[AUCTeX 内置](http://git.savannah.gnu.org/cgit/auctex.git/tree/tex.el#n1237)
 
 在 `defun dotspacemacs/user-config` 添加
 
@@ -93,25 +93,28 @@ Keywords=Text;Editor;
 
 ## Spell Checker layer
 
-基本配置及使用见 [开发主页 - LaTeX layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/latex)
+基本配置及使用见 [开发主页 - Spell Check layer](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bcheckers/spell-checking)
 
 > macOS 没法默认使用 `aspell`，如果 macOS下使用 `aspell` 需要设置 ispell-program-name。
 > 当 shell 内的 $LANG 变量不为 en_US(或者其他英语locale) 时，最好设置ispell的默认词典为 english，插件的自动语言检测尤其在 client 模式下不好用。
 
+在 `defun dotspacemacs/user-config` 添加
+
 ```lisp
-  (setq ispell-program-name "aspell")
-  (setq ispell-dictionary "english")
+  (with-eval-after-load "ispell"
+   (setq ispell-program-name "aspell")
+   (setq ispell-dictionary "english"))
 ```
 
 ## 自定义编译
 
-修改文本末尾的注释通过 `AucTeX` 来实现自定义编译，会比直接编辑器配置来的直接方便。以下所有内容应该添加到文档末尾，且包含在以下内容之内。
+修改文本末尾的注释通过 `AUCTeX` 来实现自定义编译，会比直接编辑器配置来的直接方便。本部分所提及自定义注释应该添加到文档末尾，且包含在以下内容之内。
 
 ```tex
 %%% Local Variables:
 %%% mode: latex
 %%% coding: utf-8
-你需要增加的自定义内容
+需要增加的自定义内容
 %%% End:
 ```
 
@@ -141,12 +144,12 @@ Keywords=Text;Editor;
 %%% TeX-command-extra-options: "-shell-escape"
 ```
 
-更多附加参数请参考 [AucTeX 4.1.3 Options for TeX Processors](https://www.gnu.org/software/auctex/manual/auctex/Processor-Options.html)
+更多附加参数请参考 [AUCTeX 4.1.3 Options for TeX Processors](https://www.gnu.org/software/auctex/manual/auctex/Processor-Options.html)
 
 ## 结语
 
 本文虽然不是一步一截图风格的教程，但个人看来是官方文档的一个较好补充，基本配置需要修改的部分已经完全包含在文中了，链接更多是为了学习使用。
 
-当按照本文所述将以上两个 layer 配置好后，就能获得一个非常便捷好用的 LaTeX 编辑器了，编辑文本的习惯和Vim一致(如果 spacemace 初始化的时候，都选择默认)，而快捷键则是有 spacemace 定制，可谓空格之内，4键可达。尤其当你使用 git 来管理的 latex project时，这些优势更加突出。
+当按照本文所述将以上两个 layer 配置好后，就能获得一个非常便捷好用的 LaTeX 编辑器了，编辑文本的习惯和 Vim 一致(如果 Spacemace 初始化的时候，都选择默认)，而快捷键则是由 Spacemace 定制，可谓空格之内，4键可达。尤其当你使用 `git` 来管理的 latex project时，这些优势更加突出。
 
 本人的 Spacemacs/Emacs/Vim 为入门级，配置目的是能用，力争好用，且 Emacs 还是蛮复杂的东西。所以望各位读者遇到问题，能够高台贵手，放过我，多求助于搜索引擎。这篇类似附加材料的东西，能博配置过 LaTeX layer 的大大们一笑足矣。
