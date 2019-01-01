@@ -46,7 +46,9 @@ Keywords=Text;Editor;
 ### macOS
 
 > macOS 么，一般不那么 geek 的人都想要个图形界面启动的方式（.app）。
+>
 > 于是，我一开始的方案是 homebrew 里的 service 自启 + Automator 封装脚本为 "Emacs Client.app"，但是这样会让 LaTeX layer 找不到 `latexmk` 而无法编译。
+>
 > 原因在于 macOS 通过 `launchctl` 自启动的话，`$PATH` 环境变量默认为空。
 
 经过一番折腾，最终我选择了，不跑 service 直接通过 "Emacs Client.app" 来启动服务，稍微有点不优雅的就是第一次打开 "Emacs Client.app" 需要跑2次，但也比去终端里重启 homebrew 的 service 要方便也快得多了。
@@ -60,6 +62,7 @@ Keywords=Text;Editor;
 * `/usr/local/bin/emacsclient -nca "/usr/local/bin/emacs --daemon" -- "$@" >/dev/null 2>&1`
 
 > 包括 Linux 系统的 desktop，参数的意义建议看下 `man emacsclient`
+>
 > macOS 将输出传到 `/dev/null` 是有意义的，否则 app 文件的体积会不断增大。
 
 保存为 `~/Applications/Emacs Client.app` 后，是小机器人（Automator 默认）图标，没关系，选中 "Emacs Client.app" 按 ⌘ + i 键（或者右键显示简介），将 Emacs 的图标拖到左上角小机器人上，即可完成替换。
