@@ -1,6 +1,6 @@
 # 文献管理软件
 
-本Repo的目的是，收集当前的文献管理相关软件的一些用法，征集相关软件的安装配置使用技巧。
+本 Repo 的目的是，收集当前的文献管理相关软件的一些用法，征集相关软件的安装配置使用技巧。
 软件按其英文名称排序，首行叙述皆取自官网或官方插件叙述，不代表作者立场。
 
 <!-- <https://www.library.wisc.edu/services/citation-managers/comparison-chart/>
@@ -56,7 +56,7 @@
 | Sync | ? |
 | Useful urls | [Offical Site](http://endnote.com/) / [Training](http://endnote.com/training) |
 
-EndNote是一代经典之作，它可能是数据库导出格式支援最好的文献管理软件。它支持在外文数据库中进行全文下载。它也是惟一被Mac办公套件官方支持的文献管理软件。
+EndNote 是一代经典之作，它可能是数据库导出格式支援最好的文献管理软件。它支持在外文数据库中进行全文下载。它也是惟一被 Mac 办公套件官方支持的文献管理软件。
 
 | <a href=http://elearning.cnki.net><img src="http://piccache.cnki.net/index/images/gb/logo.gif" width=216> | CNKI E-Study is one of the best softwares on managing the references in China, which integrates setting the download, reading and management. |
 |--:|:--|
@@ -74,8 +74,8 @@ EndNote是一代经典之作，它可能是数据库导出格式支援最好的�
 | Sync | 是，但服务器欠佳 |
 | Useful urls | [Offical Site](https://www.mendeley.com/) |
 
-Mendeley特色是可以提供机构内相关学者的研究进展，或是针对部分文献的相关文献推荐。
-支持对英文PDF文献的元数据识别。
+Mendeley 特色是可以提供机构内相关学者的研究进展，或是针对部分文献的相关文献推荐。
+支持对英文 PDF 文献的元数据识别。
 
 | <a href=noteexpress/README.md ><img src="http://www.inoteexpress.com/aegean/Public/images/logo.jpg" width=216> | NoteExpress provides you a flexible, powerful and complete solution to efficiently manage your references, publications, and research documents. |
 |--:|:--|
@@ -85,7 +85,7 @@ Mendeley特色是可以提供机构内相关学者的研究进展，或是针对
 | Sync | ? |
 | Useful urls | [Offical Site](http://www.inoteexpress.com/) / [Wiki](http://www.inoteexpress.com/wiki/index.php) |
 
-NoteExpress内支持较多的中外文数据库中进行在线检索和全文下载，建议完整查看首页培训视频后再使用。
+NoteExpress 内支持较多的中外文数据库中进行在线检索和全文下载，建议完整查看首页培训视频后再使用。
 
 | <a href=https://www.readcube.com/ ><img src="https://green.readcube-cdn.com/assets/logos/text-right@2x-a95b2e83820ffe926a7cd1cab510f08b85e31dd90c218cd8238b160bedba631f.png" width=120> | Bring your papers to life. Read, manage & discover new literature like never before. |
 |--:|:--|
@@ -102,10 +102,10 @@ NoteExpress内支持较多的中外文数据库中进行在线检索和全文下
 | Price | Free of charge |
 | Platform | Windows, Mac, Linux |
 | Open source | 是 |
-| Sync | 题录Sync，附件Sync300MbPrice，可通过插件实现网盘Sync |
+| Sync | 题录 Sync，附件 Sync300MbPrice，可通过插件实现网盘 Sync |
 | Useful urls | [Offical Site](https://www.zotero.org/) |
 
-Open source全Platform文献管理软件，拥有丰富的扩展插件及各种引文风格。
+Open source 全 Platform 文献管理软件，拥有丰富的扩展插件及各种引文风格。
 
 ### 服务/插件
 
@@ -118,7 +118,7 @@ Open source全Platform文献管理软件，拥有丰富的扩展插件及各种�
 
 | <a href=https://paperpile.com/ ><img src="https://cdn.paperpile.com/resources/website/images/logo.png?v=328" width=160> | No-fuss reference management for the web. Manage your research library right in your browser. |
 |--:|:--|
-| Price | 否 (30天Price试用) 学术版每月3美元，商业版每月10美元 |
+| Price | 否 (30天 Price 试用) 学术版每月3美元，商业版每月10美元 |
 | 软件/网站 | GoogleDoc |
 | Open source | 否 |
 | Useful urls | [Offical Site](https://paperpile.com/) |

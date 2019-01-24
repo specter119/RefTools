@@ -8,22 +8,22 @@ Mac 系统
 brew install wine --devel
 ```
 
-Linux 系统，装上wine就可以，一般来说wine-devel功能强一些，稳定性也足够。
+Linux 系统，装上 wine 就可以，一般来说 wine-devel 功能强一些，稳定性也足够。
 
-将HistCite的可执行文件放在`~/.wine/dirve_C/Program Files/HistCite`，路径可自选，没有空格更方便。
+将 HistCite 的可执行文件放在`~/.wine/dirve_C/Program Files/HistCite`，路径可自选，没有空格更方便。
 
-> 建立wine的C盘的fakepath目录。
+> 建立 wine 的 C 盘的 fakepath 目录。
 > ```sh
 > mkdir ~/.wine/dirve_C/fakepath
 > ```
 > 或者链接。
 > ```sh
-> ln -s "hsi文件备份目录" ~/.wine/dirve_C/fakepath
+> ln -s "hsi 文件备份目录" ~/.wine/dirve_C/fakepath
 > ```
 
 ## 2. 合并文件脚本
 
-> **！注意**，以下脚本会合并`~/Downloads`下所有文件名为`savedrecs*.txt`的文件，使用前务必保证该文件夹内txt文件都是刚刚下载的。
+> **！注意**，以下脚本会合并`~/Downloads`下所有文件名为`savedrecs*.txt`的文件，使用前务必保证该文件夹内 txt 文件都是刚刚下载的。
 
 ```sh
 #!/usr/bin/env bash
@@ -38,10 +38,10 @@ done
 echo 引文已合并至"~/.wine/drive_c/fakepath/histmerge.txt"
 ```
 
-从Web of Science导出文件后，运行本脚本，即可更改格式，并将多个文件合并。
+从 Web of Science 导出文件后，运行本脚本，即可更改格式，并将多个文件合并。
 
 
 ## to-do list
 
-- [ ] 支持直接打开hci文件(貌似只在win上实现过，测试直接wine打开无反应，可能和wine的传参有关)。
+- [ ] 支持直接打开 hci 文件(貌似只在 win 上实现过，测试直接 wine 打开无反应，可能和 wine 的传参有关)。
 - [ ] 检索，合并结果的自动化，更多网站的兼容。

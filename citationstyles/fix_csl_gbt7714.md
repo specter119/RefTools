@@ -1,12 +1,12 @@
-# 自定义宏批量修改csl生成参考文献书目的错误
+# 自定义宏批量修改 csl 生成参考文献书目的错误
 
-鉴于 csl 还没有想好怎么支持多语言(见[csl/schema#63](https://github.com/citation-style-language/schema/issues/63))，但 GB/T 7714-{1987,2005,2015} 都有多语言的需求，导致现在 csl 没法生成完全正确的参考文献书目。生成中错误较显著的，就是多英文作者(多于4位)省略以“等”结尾，实际应为“et al.”
+鉴于 csl 还没有想好怎么支持多语言(见 [csl/schema#63](https://github.com/citation-style-language/schema/issues/63))，但 GB/T 7714-{1987,2005,2015} 都有多语言的需求，导致现在 csl 没法生成完全正确的参考文献书目。生成中错误较显著的，就是多英文作者(多于4位)省略以“等”结尾，实际应为“et al.”
 
-> 实际问题还有很多，比如图书的版本，默认还是会写作“第n版”，同样与英文书不符。
+> 实际问题还有很多，比如图书的版本，默认还是会写作“第 n 版”，同样与英文书不符。
 >
 > 但是相对而言，作者比较好匹配，行首+中英文紧邻使错误尤为突出。
 >
-> 同时，GB/T 7714-{1987,2005} 的 csl，完成度还不够高(csl自述及研究过的同学反馈)，且最新版本 GB/T 7714-2015 (其实三个版本差距都不大) 还没有相匹配的 csl。真正一个完成度更高的 GB/T 7714-2015，需要正则修改的可能更多，也更难。
+> 同时，GB/T 7714-{1987,2005} 的 csl，完成度还不够高(csl 自述及研究过的同学反馈)，且最新版本 GB/T 7714-2015 (其实三个版本差距都不大) 还没有相匹配的 csl。真正一个完成度更高的 GB/T 7714-2015，需要正则修改的可能更多，也更难。
 >
 > GB/T 7714 里面一些规定也不合理，比如英文作者完全大写，最终效果也很丑。
 
@@ -27,7 +27,7 @@
 Sub deng2etal()
 '
 ' deng2etal macro
-' English等 -> english, et al
+' English 等 -> english, et al
 '
     With Selection.Find
         .Forward = True
@@ -43,11 +43,11 @@ Sub deng2etal()
 End Sub
 ```
 
-写宏参考 [知乎 @johnmy 相关问题回答][johnmy] 写成，请务必不要修改csl的默认语言，以便生成书目均为“等”。
+写宏参考 [知乎 @johnmy 相关问题回答][^johnmy] 写成，请务必不要修改 csl 的默认语言，以便生成书目均为“等”。
 
-> 删除了之前版本包含的`etal2deng`，因为csl需要修改，且宏保存运行时可能出问题。
+> 删除了之前版本包含的`etal2deng`，因为 csl 需要修改，且宏保存运行时可能出问题。
 >
-> 正则匹配中文看到了2个说法，[一-龥](见[Pinyin News博文][pinyin.info])和[⺀-￭](见[super user][super user])，在本人电脑上就出现了保存后vba再次打开就无法正常显示部分字符，且无法正常解析运行。
+> 正则匹配中文看到了2个说法，[一-龥](见[Pinyin News 博文][^pinyin.info])和[⺀-￭](见[super user][^super_user])，在本人电脑上就出现了保存后 vba 再次打开就无法正常显示部分字符，且无法正常解析运行。
 >
 > 如果确实需要使用 `deng2etal`的功能，请尝试使用替换，以下2个方案应都可行（复制“”内的内容）。
 > 1. "([⺀-￭]@)([, ]*)et al" -> "\1\2等"
@@ -66,10 +66,6 @@ End Sub
 
 ## 参考
 
-[johnmy]: https://www.zhihu.com/question/39156067/answer/145700137
-[pinyin.info]: http://pinyin.info/news/2016/how-to-find-chinese-characters-in-an-ms-word-document/
-[super user]: https://superuser.com/questions/983441/visual-studio-search-through-code-for-chinese-text
-
-1. [Zotero 如何设置引文列表中的“等”和“et al”混排？- johnmy的回答 - 知乎](https://www.zhihu.com/question/39156067/answer/145700137)
-1. [How to find Chinese characters in an MS Word document](http://pinyin.info/news/2016/how-to-find-chinese-characters-in-an-ms-word-document/)
-1. [Visual Studio - Search through code for Chinese text](https://superuser.com/questions/983441/visual-studio-search-through-code-for-chinese-text)
+[^johnmy]: [Zotero 如何设置引文列表中的“等”和“et al”混排？- johnmy 的回答 - 知乎](https://www.zhihu.com/question/39156067/answer/145700137)
+[^pinyin.info]: [How to find Chinese characters in an MS Word document](http://pinyin.info/news/2016/how-to-find-chinese-characters-in-an-ms-word-document/)
+[^super_user]: [Visual Studio - Search through code for Chinese text](https://superuser.com/questions/983441/visual-studio-search-through-code-for-chinese-text)
