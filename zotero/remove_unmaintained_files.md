@@ -77,4 +77,4 @@ except ImportError:
 
 ```
 
-以上脚本同时发布在 [GithubGist - zot_rm_unmaintained_files.py](https://gist.github.com/specter119/b79dc35a6091d0fd0896a9536fbddb5a)，如有bug或者功能上的补充，欢迎在gist上pr。同时欢迎文末留言，但如安装python和有了python如何安装click这类问题，还望自行搜索引擎。
+以上脚本同时发布在 [GithubGist - zot_rm_unmaintained_files.py](https://gist.github.com/specter119/b79dc35a6091d0fd0896a9536fbddb5a)，如有 bug 或者功能上的补充，欢迎在 gist 上 pr。同时欢迎文末留言，但如安装 python 和有了 python 如何安装 click 这类问题，还望自行搜索引擎。

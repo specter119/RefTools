@@ -34,9 +34,9 @@ done
 echo 引文已合并至 "~/.wine/drive_c/fakepath/histmerge.txt"
 ```
 
-从Web of Science导出文件后，运行本脚本，即可更改格式，并将多个文件合并。
+从 Web of Science 导出文件后，运行本脚本，即可更改格式，并将多个文件合并。
 
 ## to-do list
 
-- [ ] 支持直接打开 hci 文件(貌似只在win上实现过，测试直接 wine 打开无反应，可能和 wine 的传参有关)。
+- [ ] 支持直接打开 hci 文件(貌似只在 win 上实现过，测试直接 wine 打开无反应，可能和 wine 的传参有关)。
 - [ ] 检索，合并结果的自动化，更多网站的兼容。
