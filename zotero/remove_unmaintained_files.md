@@ -6,12 +6,13 @@
 
 以下系统测试通过:
 
-  - Windows10
-  - MacOS 10.13.6
+  - Windows 10
+  - macOS 10.13.6
   - Manjaro 17.1.11
 
-使用的 Python 均由 [miniconda](https://conda.io/miniconda.html) 安装，版本 3.6.6，**Python 2.x 无法使用**。
-建议安装 [click](http://click.pocoo.org/5/)，否则**删除文件前不进行确认**，**关闭 Zotero 后才能运行该脚本**。
+初稿截至时，由 [miniconda](https://conda.io/miniconda.html) 安装的 Python3.6.6 在以上三个系统的中测试通过，Python2.X 在 macOS 系统测试通过。
+建议安装 [click](http://click.pocoo.org/5/)，否则**删除文件前不进行确认**。
+**关闭 Zotero 后才能运行该脚本**。
 
 > 笔者强烈建议任何系统装 Python 直接上 minicoda。
 
@@ -124,7 +125,6 @@ if __name__ == '__main__':
             'The following files no longer managed by Zotero will be removed:')
         print('\n'.join(['  {}'.format(p) for p in attachments_to_remove]))
         remove_unmaintained(attachments_to_remove)
-
 ```
 
 以上脚本同时发布在 [GithubGist - zot_rm_unmaintained_files.py](https://gist.github.com/specter119/b79dc35a6091d0fd0896a9536fbddb5a)，如有 bug 或者功能上的补充，欢迎在 gist 上 pr。同时欢迎文末留言，但如安装 python 和有了 python 如何安装 click 这类问题，还望自行搜索引擎。
