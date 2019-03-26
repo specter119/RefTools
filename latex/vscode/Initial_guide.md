@@ -77,7 +77,6 @@ LaTeX 的集成开发环境(Integrated Development Environment, 简称 IDE)的�
 
 - 灵活更换引擎
 - 保存即编译
-- 软件内实现预览及同步
+- 支持预览及同步
 - 支持格式化
-- 支持同步
-- 插件无需配置
+- 插件配置很少
