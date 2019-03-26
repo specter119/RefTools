@@ -20,60 +20,110 @@
 # coding: utf-8
 
 from __future__ import print_function
-import sys
-import re
+
 import configparser
-from pathlib import Path
+import re
 import shutil
 import sqlite3
-
-profile_dirs = {
-    'darwin': Path.home() / 'Library/Application Support/Zotero',
-    'linux': Path.home() / '.zotero/zotero',
-    'linux2': Path.home() / '.zotero/zotero',
-    'win32': Path.home() / 'AppData/Roaming/Zotero/Zotero'
-}
-profile_dir = profile_dirs[sys.platform]
-
-config = configparser.ConfigParser()
-config.read(profile_dir / 'profiles.ini')
-configs_loc = profile_dir / config['Profile0']['Path'] / 'prefs.js'
-configs = configs_loc.read_text()
-
-zotfile_dest_pat = re.compile(r'user_pref\("extensions.zotfile.dest_dir",\ "(?P<zotfile_dest>.+)"\);')
-zotfile_dest_dir = Path(zotfile_dest_pat.search(configs).group('zotfile_dest'))
-zotero_data_pat = re.compile(r'user_pref\("extensions.zotero.dataDir",\ "(?P<zotero_data>.+)"\);')
-zotero_data_dir = Path(zotero_data_pat.search(configs).group('zotero_data'))
-
-attachments_local = set(p for p in zotfile_dest_dir.glob('**/*') if p.is_file() and p.name[0] != '.')
-conn = sqlite3.connect('file:{}?mode=ro'.format(zotero_data_dir / 'zotero.sqlite'), uri=True)
-c = conn.cursor()
-c.execute('SELECT path FROM itemAttachments WHERE linkMode = 2')
-attachments_zotero = set(zotfile_dest_dir / p[0].replace('attachments:', '', 1) for p in c.fetchall())
-attachments_to_remove = attachments_local - attachments_zotero
+import sys
 
 try:
-    import click
-    print('\n'.join(
-        ['The following files are no longer managed by zotero:', *['  {}'.format(p) for p in attachments_to_remove]]))
-    if click.confirm('Do you want remove them?', default=True):
-        [p.unlink() for p in attachments_to_remove]
-        empty_dirs = [
-            p for p in zotfile_dest_dir.glob('**/*')
-            if (not p.is_file()) and (not len([f for f in list(p.iterdir()) if f.name[0] != '.']))
-        ]
-        [shutil.rmtree(p, ignore_errors=True) for p in empty_dirs]
+    from pathlib import Path
 except ImportError:
-    print('\n'.join([
-        'The following files are no longer managed by zotero will be removed:',
-        *['  {}'.format(p) for p in attachments_to_remove]
-    ]))
+    from pathlib2 import Path
+
+if sys.version_info.major == 2:
+    reload(sys)
+    sys.setdefaultencoding('UTF8')
+
+
+def get_zotfile_dest_and_zotero_data_dirs():
+    profile_dirs = {
+        'darwin': Path.home() / 'Library/Application Support/Zotero',
+        'linux': Path.home() / '.zotero/zotero',
+        'linux2': Path.home() / '.zotero/zotero',
+        'win32': Path.home() / 'AppData/Roaming/Zotero/Zotero'
+    }
+    profile_dir = profile_dirs[sys.platform]
+
+    config = configparser.ConfigParser()
+    config.read('{}'.format(profile_dir / 'profiles.ini'))
+    configs_loc = profile_dir / config['Profile0']['Path'] / 'prefs.js'
+    configs = configs_loc.read_text()
+
+    zotfile_dest_pat = re.compile(
+        r'user_pref\("extensions.zotfile.dest_dir",\ "(?P<zotfile_dest>.+)"\);')
+    zotfile_dest_dir = Path(
+        zotfile_dest_pat.search(configs).group('zotfile_dest'))
+    zotero_data_pat = re.compile(
+        r'user_pref\("extensions.zotero.dataDir",\ "(?P<zotero_data>.+)"\);')
+    zotero_data_dir = Path(zotero_data_pat.search(configs).group('zotero_data'))
+
+    return zotfile_dest_dir, zotero_data_dir
+
+
+def get_unmaintained_files(zotfile_dest_dir,
+                           zotero_data_dir,
+                           case_sensitive='auto'):
+    attachments_local = set(p.as_posix() for p in zotfile_dest_dir.glob('**/*')
+                            if p.is_file() and p.name[0] != '.')
+
+    con = sqlite3.connect('{}'.format(zotero_data_dir / 'zotero.sqlite'))
+    with con:
+        cur = con.cursor()
+        cur.execute('SELECT path FROM itemAttachments WHERE linkMode = 2')
+        attachments_zotero = set([
+            p.as_posix() for p in [
+                zotfile_dest_dir / p[0].replace('attachments:', '', 1)
+                for p in cur.fetchall()
+            ]
+        ])
+
+    if sys.platform == 'darwin':
+        import unicodedata
+        attachments_zotero = set(
+            list(attachments_zotero) +
+            [unicodedata.normalize('NFD', p) for p in attachments_zotero])
+    if case_sensitive == 'auto':
+        case_sensitive = {
+            'darwin': False,
+            'linux': True,
+            'linux2': True,
+            'win32': False
+        }[sys.platform]
+    if not case_sensitive:
+        attachments_local = set([fp.lower() for fp in attachments_local])
+        attachments_zotero = set([fp.lower() for fp in attachments_zotero])
+    attachments_to_remove = attachments_local - attachments_zotero
+
+    return attachments_to_remove
+
+
+def remove_unmaintained(attachments_to_remove):
     [p.unlink() for p in attachments_to_remove]
     empty_dirs = [
-        p for p in zotfile_dest_dir.glob('**/*')
-        if (not p.is_file()) and (not len([f for f in list(p.iterdir()) if f.name[0] != '.']))
+        p for p in zotfile_dest_dir.glob('**/*') if (not p.is_file()) and (
+            not len([f for f in list(p.iterdir()) if f.name[0] != '.']))
     ]
-    [shutil.rmtree(p, ignore_errors=True) for p in empty_dirs]
+    [shutil.rmtree('{}'.format(p), ignore_errors=True) for p in empty_dirs]
+
+
+if __name__ == '__main__':
+    zotfile_dest_dir, zotero_data_dir = get_zotfile_dest_and_zotero_data_dirs()
+    attachments_to_remove = get_unmaintained_files(zotfile_dest_dir,
+                                                   zotero_data_dir)
+
+    try:
+        import click
+        print('The following files are no longer managed by Zotero:')
+        print('\n'.join(['  {}'.format(p) for p in attachments_to_remove]))
+        if click.confirm('Do you want remove them?', default=True):
+            remove_unmaintained(attachments_to_remove)
+    except ImportError:
+        print(
+            'The following files no longer managed by Zotero will be removed:')
+        print('\n'.join(['  {}'.format(p) for p in attachments_to_remove]))
+        remove_unmaintained(attachments_to_remove)
 
 ```
 

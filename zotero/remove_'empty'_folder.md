@@ -31,38 +31,51 @@ try:
 except ImportError:
     from pathlib2 import Path
 
-profile_dirs = {
-    'darwin': Path.home() / 'Library/Application Support/Zotero',
-    'linux': Path.home() / '.zotero/zotero',
-    'linux2': Path.home() / '.zotero/zotero',
-    'win32': Path.home() / 'AppData/Roaming/Zotero/Zotero'
-}
-profile_dir = profile_dirs[sys.platform]
 
-config = configparser.ConfigParser()
-config.read('{}'.format(profile_dir / 'profiles.ini'))
-configs_loc = profile_dir / config['Profile0']['Path'] / 'prefs.js'
-configs = configs_loc.read_text()
+def get_zotero_storage_dir():
+    profile_dirs = {
+        'darwin': Path.home() / 'Library/Application Support/Zotero',
+        'linux': Path.home() / '.zotero/zotero',
+        'linux2': Path.home() / '.zotero/zotero',
+        'win32': Path.home() / 'AppData/Roaming/Zotero/Zotero'
+    }
+    profile_dir = profile_dirs[sys.platform]
 
-zotero_data_pat = re.compile(
-    r'user_pref\("extensions.zotero.dataDir",\ "(?P<zotero_data>.+)"\);')
-zotero_data_dir = Path(zotero_data_pat.search(configs).group('zotero_data'))
-storage_dir = zotero_data_dir / 'storage'
-dirs_to_remove = [
-    '{}'.format(p) for p in storage_dir.iterdir() if (not p.is_file()) and (
-        not len([f for f in list(p.iterdir()) if f.name[0] != '.']))
-]
+    config = configparser.ConfigParser()
+    config.read('{}'.format(profile_dir / 'profiles.ini'))
+    configs_loc = profile_dir / config['Profile0']['Path'] / 'prefs.js'
+    configs = configs_loc.read_text()
 
-try:
-    import click
-    print('The following folders contain no attachments:')
-    print('\n  '.join([''] + dirs_to_remove))
-    if click.confirm('Do you want remove them?', default=True):
+    zotero_data_pat = re.compile(
+        r'user_pref\("extensions.zotero.dataDir",\ "(?P<zotero_data>.+)"\);')
+    zotero_data_dir = Path(zotero_data_pat.search(configs).group('zotero_data'))
+    storage_dir = zotero_data_dir / 'storage'
+    return storage_dir
+
+
+def get_empty_folders(zotero_storage_dir):
+    return [
+        p.as_posix() for p in zotero_storage_dir.iterdir()
+        if (not p.is_file()) and (
+            not len([f for f in list(p.iterdir()) if f.name[0] != '.']))
+    ]
+
+
+if __name__ == '__main__':
+    zotero_storage_dir = get_zotero_storage_dir()
+    dirs_to_remove = get_empty_folders(zotero_storage_dir)
+    try:
+        import click
+        print('The following folders contain no attachments:')
+        print('\n  '.join([''] + dirs_to_remove))
+        if click.confirm('Do you want remove them?', default=True):
+            [shutil.rmtree(p, ignore_errors=True) for p in dirs_to_remove]
+    except ImportError:
+        print(
+            'The following folders containing no attachments will be removed:')
+        print('\n  '.join([''] + dirs_to_remove))
         [shutil.rmtree(p, ignore_errors=True) for p in dirs_to_remove]
-except ImportError:
-    print('The following folders containing no attachments will be removed:')
-    print('\n  '.join([''] + dirs_to_remove))
-    [shutil.rmtree(p, ignore_errors=True) for p in dirs_to_remove]
+
 ```
 
 以上脚本也发布在 [GithubGist - zot_rm_empty_folders.py](https://gist.github.com/specter119/0ec043c03d0d8cbe02e83842ee7b2766)，如有 bug 或者功能上的补充，欢迎在 gist 上 pr。同时欢迎文末留言，但如安装 python 或者已有 python 不知安装 click 这类问题，还望自行搜索引擎。
