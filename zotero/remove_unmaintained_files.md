@@ -12,7 +12,7 @@
 
 初稿截至时，由 [miniconda](https://conda.io/miniconda.html) 安装的 Python3.6.6 在以上三个系统的中测试通过，Python2.X 在 macOS 系统测试通过。
 建议安装 [click](http://click.pocoo.org/5/)，否则**删除文件前不进行确认**。
-**关闭 Zotero 后才能运行该脚本**。
+**判断基于本地数据库，请确保完整同步后，关闭 Zotero 后才能运行本脚本**。
 
 > 笔者强烈建议任何系统装 Python 直接上 minicoda。
 
@@ -39,6 +39,9 @@ if sys.version_info.major == 2:
 
 
 def get_zotfile_dest_and_zotero_data_dirs():
+    '''
+    Get the Zotero data dir and the Zotfile destination dir in PosixPath type
+    '''
     profile_dirs = {
         'darwin': Path.home() / 'Library/Application Support/Zotero',
         'linux': Path.home() / '.zotero/zotero',
@@ -52,20 +55,29 @@ def get_zotfile_dest_and_zotero_data_dirs():
     configs_loc = profile_dir / config['Profile0']['Path'] / 'prefs.js'
     configs = configs_loc.read_text()
 
+    zotero_data_pat = re.compile(
+        r'user_pref\("extensions.zotero.dataDir",\ "(?P<zotero_data>.+)"\);')
+    zotero_data_dir = Path(zotero_data_pat.search(
+        configs).group('zotero_data'))
     zotfile_dest_pat = re.compile(
         r'user_pref\("extensions.zotfile.dest_dir",\ "(?P<zotfile_dest>.+)"\);')
     zotfile_dest_dir = Path(
         zotfile_dest_pat.search(configs).group('zotfile_dest'))
-    zotero_data_pat = re.compile(
-        r'user_pref\("extensions.zotero.dataDir",\ "(?P<zotero_data>.+)"\);')
-    zotero_data_dir = Path(zotero_data_pat.search(configs).group('zotero_data'))
 
-    return zotfile_dest_dir, zotero_data_dir
+    return zotero_data_dir, zotfile_dest_dir
 
 
-def get_unmaintained_files(zotfile_dest_dir,
-                           zotero_data_dir,
+def get_unmaintained_files(zotero_data_dir,
+                           zotfile_dest_dir,
                            case_sensitive='auto'):
+    '''
+    Get a list of atthchment in PosixPath type that unmaintained in the Zotero
+    Args:
+        zotero_data_dir(PosixPath): Zotero data dir
+        zotfile_dest_dir(PosixPath): Zotfile destination dir
+        case_sensitive(bool or str): wether the os is case sensitive, 
+                                     default set linux as True, and reset as False
+    '''
     attachments_local = set(p.as_posix() for p in zotfile_dest_dir.glob('**/*')
                             if p.is_file() and p.name[0] != '.')
 
@@ -93,26 +105,29 @@ def get_unmaintained_files(zotfile_dest_dir,
             'win32': False
         }[sys.platform]
     if not case_sensitive:
-        attachments_local = set([fp.lower() for fp in attachments_local])
-        attachments_zotero = set([fp.lower() for fp in attachments_zotero])
+        attachments_local = set([p.lower() for p in attachments_local])
+        attachments_zotero = set([p.lower() for p in attachments_zotero])
     attachments_to_remove = attachments_local - attachments_zotero
 
-    return attachments_to_remove
+    return [Path(p) for p in attachments_to_remove]
 
 
 def remove_unmaintained(attachments_to_remove):
+    '''
+    Remove the unmaintained files in PosixPath type, and clear empty dirs
+    '''
     [p.unlink() for p in attachments_to_remove]
     empty_dirs = [
         p for p in zotfile_dest_dir.glob('**/*') if (not p.is_file()) and (
             not len([f for f in list(p.iterdir()) if f.name[0] != '.']))
     ]
-    [shutil.rmtree('{}'.format(p), ignore_errors=True) for p in empty_dirs]
+    [shutil.rmtree(p.as_posix(), ignore_errors=True) for p in empty_dirs]
 
 
 if __name__ == '__main__':
-    zotfile_dest_dir, zotero_data_dir = get_zotfile_dest_and_zotero_data_dirs()
-    attachments_to_remove = get_unmaintained_files(zotfile_dest_dir,
-                                                   zotero_data_dir)
+    zotero_data_dir, zotfile_dest_dir = get_zotfile_dest_and_zotero_data_dirs()
+    attachments_to_remove = get_unmaintained_files(zotero_data_dir,
+                                                   zotfile_dest_dir)
 
     try:
         import click

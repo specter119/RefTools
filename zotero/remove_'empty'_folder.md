@@ -33,6 +33,9 @@ except ImportError:
 
 
 def get_zotero_storage_dir():
+    '''
+    Get the Zotero storage dir and in PosixPath type
+    '''
     profile_dirs = {
         'darwin': Path.home() / 'Library/Application Support/Zotero',
         'linux': Path.home() / '.zotero/zotero',
@@ -54,6 +57,9 @@ def get_zotero_storage_dir():
 
 
 def get_empty_folders(zotero_storage_dir):
+    '''
+    Get a list of empty dir in string type.
+    '''
     return [
         p.as_posix() for p in zotero_storage_dir.iterdir()
         if (not p.is_file()) and (
