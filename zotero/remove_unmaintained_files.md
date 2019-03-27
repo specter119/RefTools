@@ -75,8 +75,8 @@ def get_unmaintained_files(zotero_data_dir,
     Args:
         zotero_data_dir(PosixPath): Zotero data dir
         zotfile_dest_dir(PosixPath): Zotfile destination dir
-        case_sensitive(bool or str): wether the os is case sensitive, 
-                                     default set linux as True, and reset as False
+        case_sensitive(bool or str): wether the os is case sensitive,
+                                     default set linux as True, and rest as False
     '''
     attachments_local = set(p.as_posix() for p in zotfile_dest_dir.glob('**/*')
                             if p.is_file() and p.name[0] != '.')
