@@ -99,7 +99,7 @@ NoteExpress 内支持较多的中外文数据库中进行在线检索和全文�
 | 免费 | 是 |
 | 平台 | Windows, Mac, Linux |
 | 开源 | 是 |
-| 同步 | 题录同步，附件同步300Mb 免费，可通过插件实现网盘同步 |
+| 同步 | 题录同步，附件同步300Mb 免费，可通过插件实现网盘同步。2025年5月[坚果云官方推出了 Zotero 同步支持](https://mp.weixin.qq.com/s/xPVvlD19nLYEikwDyzqKFw) ，可以避免WebDav协议的限制。 |
 | 链接 | [主页](https://www.zotero.org/) |
 
 开源全平台文献管理软件，拥有丰富的扩展插件及各种引文风格。

@@ -102,7 +102,7 @@ NoteExpress 内支持较多的中外文数据库中进行在线检索和全文�
 | Price | Free of charge |
 | Platform | Windows, Mac, Linux |
 | Open source | 是 |
-| Sync | 题录 Sync，附件 Sync300MbPrice，可通过插件实现网盘 Sync |
+| Sync | 题录 Sync，附件 Sync300MbPrice，可通过插件实现网盘 Sync 。2025年5月[坚果云官方推出了 Zotero 同步支持](https://mp.weixin.qq.com/s/xPVvlD19nLYEikwDyzqKFw) ，可以避免WebDav协议的限制。|
 | Useful urls | [Offical Site](https://www.zotero.org/) |
 
 Open source 全 Platform 文献管理软件，拥有丰富的扩展插件及各种引文风格。
