@@ -22,3 +22,13 @@ HistCite 功能极其强大，使用的方法可以参考以下博文/课件。
 [在 Windows 环境下的导入过程](win.md)
 
 [非 Windows 环境下的安装](wine.md)
+
+## 独立开发的 macOS 应用
+
+[HistCite Mac](https://github.com/yangnim21029/histcite-mac) 是参照 HistCite 12.03.17 工作流程独立开发的 macOS 书目计量工具，与原版作者没有隶属关系，不包含原版 HistCite 的程序代码或可执行文件。
+
+它支持 macOS 13 及以上，Apple Silicon 与 Intel Mac 使用同一份 Universal DMG，无需 Windows、Wine 或虚拟机。可导入 WoS 标签式纯文本及 HCI，查看引用指标并使用 Graph Maker 绘图。原创代码采用 MIT，随附组件保留各自许可。
+
+[下载](https://github.com/yangnim21029/histcite-mac/releases/latest) · [安装说明](https://github.com/yangnim21029/histcite-mac/blob/main/docs/mac-install.zh-CN.md) · [兼容性比较范围](https://github.com/yangnim21029/histcite-mac/blob/main/docs/compatibility.md)
+
+当前社区版本未经过 Apple 公证，首次打开方式见安装说明。原版 Windows 程序的 Wine 安装方式继续见上面的非 Windows 安装教程。
