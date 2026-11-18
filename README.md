@@ -16,6 +16,8 @@
 | Sync | 否 |
 | Useful urls | [Offical Site](http://interest.science.thomsonreuters.com/forms/HistCite/) |
 
+Mac 用户也可参考独立开发的 [HistCite Mac](https://github.com/yangnim21029/histcite-mac)，详见 [macOS 应用说明](histcite/README.md#独立开发的-macos-应用)。
+
 [sci2](https://sci2.cns.iu.edu/)
 
 ## 文献管理
